@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock%}
@@ -14,28 +15,31 @@
 <header>
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
+            <a href="{{ url_for('home') }}" class="brand-logo">Logo</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
                 <li><a href="#">Add Recipe</a></li>
                 <li><a href="#">Favourites</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">Log In</a></li>
                 <li><a href="#">Log Out</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
 
+                
             </ul>
         </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Home</a></li>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
         <li><a href="#">Add Recipe</a></li>
         <li><a href="#">Favourites</a></li>
         <li><a href="#">Shop</a></li>
         <li><a href="#">Log In</a></li>
         <li><a href="#">Log Out</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
     </ul>
 
 </header>
