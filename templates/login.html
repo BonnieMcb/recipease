@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">Log In</h3>
+
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+            <div class="card-panel teal">
+                 <!-- username -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="username" name="username" type="text" minlength="5"
+                        maxlength="20" class="validate" required>
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <!-- password -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">https</i>
+                        <input id="password" name="password" type="password" minlength="5"
+                        maxlength="20" class="validate" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- login  -->
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large">
+                        Log In <i class="material-icons prefix">how_to_reg</i>
+                    </button>
+                </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align">
+                Not registered yet?
+                <a href="{{ url_for('register') }}">Register</a>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
