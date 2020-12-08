@@ -25,13 +25,26 @@
                     </div>
                 </div>
                 <!-- allergens -->
-                <div class="row">
-                    <div class="input-field col s12">
-                            <i class="material-icons prefix">error_outline</i>
-                            <input id="allergens" name="allergens" type="tel" class="validate">
-                            <label for="allergens">Allergens</label>
-                        </div>
-                    </div>
+                <div class="input-field col s12">
+                    <select multiple id="allergens" name="allergens" type="checkbox" class="validate">
+                        <option value="" disabled selected>            </option>
+                        <option value="Celery">Celery</option>
+                        <option value="Gluten">Cereal with gluten</option>
+                        <option value="Crustateans">Crustateans</option>
+                        <option value="Eggs">Eggs</option>
+                        <option value="Fish">Fish</option>
+                        <option value="Lupin">Lupin</option>
+                        <option value="Milk">Milk</option>
+                        <option value="Molluscs">Molluscs</option>
+                        <option value="Mustard">Mustard</option>
+                        <option value="Peanuts">Peanuts</option>
+                        <option value="Sesame">Sesame</option>
+                        <option value="Soybeans">Soybeans</option>
+                        <option value="Sulphur">Sulphur dioxide and sulphites</option>
+                        <option value="Nuts">Tree nuts</option>
+                    </select>
+                    <!-- <i class="material-icons prefix">error_outline</i> -->
+                    <label>Are you allergic to anything?</label> <!-- Make text a little larger? -->
                 </div>
                 <!-- register  -->
                 <div class="row">
