@@ -26,8 +26,8 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/get_recipes")
-def get_recipes():
+@app.route("/recipes")
+def recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
@@ -91,7 +91,19 @@ def favourites():
     # from session user, get username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("favourites.html", username=username)
+
+    if session["user"]:
+        return render_template("favourites.html", username=username)
+
+    return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    # remove the user from the session
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("recipes"))
 
 
 if __name__ == "__main__":
