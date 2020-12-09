@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -53,6 +53,8 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successfull")
+        return redirect(url_for("favourites", username=session["user"]))
+
     return render_template("register.html")
 
 
@@ -69,6 +71,8 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
+                    return redirect(url_for(
+                        "favourites", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect username or password")
@@ -80,6 +84,14 @@ def login():
             return redirect(url_for('login'))
 
     return render_template("login.html")
+
+
+@app.route("/favourites", methods=["GET", "POST"])
+def favourites():
+    # from session user, get username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("favourites.html", username=username)
 
 
 if __name__ == "__main__":

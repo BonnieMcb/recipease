@@ -21,7 +21,7 @@
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
                 <li><a href="#">Add Recipe</a></li>
-                <li><a href="#">Favourites</a></li>
+                <li><a href="{{ url_for('favourites', username=session['user']) }}">Favourites</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
                 <li><a href="#">Log Out</a></li>
@@ -35,7 +35,7 @@
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
         <li><a href="#">Add Recipe</a></li>
-        <li><a href="#">Favourites</a></li>
+        <li><a href="{{ url_for('favourites', username=session['user']) }}">Favourites</a></li>
         <li><a href="#">Shop</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
         <li><a href="#">Log Out</a></li>
