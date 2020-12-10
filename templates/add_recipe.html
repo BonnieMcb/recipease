@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">Add Recipe</h3>
+
+    <div class="row">
+        <form class="col s12" method="POST" action="">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="last_name" name="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input id="recipe_name" name="recipe_name" minlength="3" maxlength="40"
+                        type="text" class="validate">
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="servings" name="servings" type="text" class="validate">
+                    <label for="servings">Servings</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="time" name="time" type="text" class="validate">
+                    <label for="time">Time</label>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    Tick all allergens contained within the dish.
+                    <div>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Red</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Red</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Red</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="image" name="image" type="text" class="validate">
+                    <label for="image">To add an image, enter a valid URL</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="ingredients" name="ingredients" minlength="4"
+                    maxlength="500" class="materialize-textarea validate" required></textarea>
+                    <label for="ingredients">Ingredients, separated by comma</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="method" name="method" minlength="4"
+                    maxlength="1000" class="materialize-textarea validate" required></textarea>
+                    <label for="method">Method, separated by comma</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+{% endblock %}
