@@ -4,7 +4,8 @@
     <h3 class="center-align">Add Recipe</h3>
 
     <div class="row">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+            <!-- Category and name -->
             <div class="row">
                 <div class="input-field col s6">
                     <select id="category" name="category" class="validate" required>
@@ -21,6 +22,7 @@
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
+            <!-- Servings and time -->
             <div class="row">
                 <div class="input-field col s6">
                     <input id="servings" name="servings" type="text" class="validate">
@@ -31,31 +33,29 @@
                     <label for="time">Time</label>
                 </div>
             </div>
+            <!-- Allergens -->
             <div class="row">
-                <div>
+                <div class="input-field col s12">
                     Tick all allergens contained within the dish.
                     <div>
-                        <label>
-                            <input type="checkbox" />
-                            <span>Red</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" />
-                            <span>Red</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" />
-                            <span>Red</span>
-                        </label>
+                        {% for x in allergen %}
+                        {% set lowername = ''.join(x.allergen_name.split()).lower() %}
+                            <label for="{{ lowername }}">
+                                <input type="checkbox" id="{{ lowername }}" name="{{ lowername }}" value="{{ lowername }}" class="validate"/>
+                                <span>{{ x.allergen_name }}</span>
+                            </label>
+                       {% endfor %}
                     </div>
                 </div>
             </div>
+            <!-- image link -->
             <div class="row">
                 <div class="input-field col s12">
                     <input id="image" name="image" type="text" class="validate">
                     <label for="image">To add an image, enter a valid URL</label>
                 </div>
             </div>
+            <!-- Ingredients and method -->
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="ingredients" name="ingredients" minlength="4"
@@ -68,6 +68,14 @@
                     <textarea id="method" name="method" minlength="4"
                     maxlength="1000" class="materialize-textarea validate" required></textarea>
                     <label for="method">Method, separated by comma</label>
+                </div>
+            </div>
+            <!-- Submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button class="btn waves-effect waves-light" type="submit">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
                 </div>
             </div>
         </form>

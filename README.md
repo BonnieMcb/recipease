@@ -12,3 +12,8 @@ Figure out checkboxes on Add recipe
 nice TODO:
 only show favourite buttons when logged in OR 
     flash message/tooltip(Materialize) that one must be logged in to save to favourites
+
+
+attributes:
+    for add recipe tickboxes
+    https://stackoverflow.com/questions/5799090/remove-whitespace-and-make-all-lowercase-in-a-string-for-python
