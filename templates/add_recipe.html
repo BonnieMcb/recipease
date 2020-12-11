@@ -7,10 +7,14 @@
         <form class="col s12" method="POST" action="">
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="last_name" name="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
+                    <select id="category" name="category" class="validate" required>
+                        <option value="" disabled selected>Choose Category</option>
+                        {% for x in categories %}
+                            <option value="{{ x.category }}">{{ x.category }}</option>
+                        {% endfor %}
+                        </select>
+                    <label for="category">Select Dish Category</label>
                 </div>
-
                 <div class="input-field col s6">
                     <input id="recipe_name" name="recipe_name" minlength="3" maxlength="40"
                         type="text" class="validate">

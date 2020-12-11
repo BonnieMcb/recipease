@@ -34,6 +34,7 @@ def recipes():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    allergen = mongo.db.allergen.find()
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -46,7 +47,7 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "allergens": request.form.getlist("allergens")
+            "allergen_name": request.form.getlist("allergen_name")
         }
         mongo.db.users.insert_one(register)
 
@@ -55,7 +56,7 @@ def register():
         flash("Registration successfull")
         return redirect(url_for("favourites", username=session["user"]))
 
-    return render_template("register.html")
+    return render_template("register.html", allergen=allergen)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -108,7 +109,8 @@ def logout():
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("/add_recipe.html")
+    categories = mongo.db.categories.find().sort("category", 1)
+    return render_template("/add_recipe.html", categories=categories)
 
 
 if __name__ == "__main__":
