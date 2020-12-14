@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for recipes in recipes %}
+    
         <div class="row">
-            <div class="col s12 m6">
-                <div class="card">
+            {% for recipes in recipes %}
+            <div class="col s4">
+                <div class="card medium">
                     <div class="card-image">
                     {% if recipes.image %}
                         <img src={{ recipes.image }} >
@@ -21,8 +22,9 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+    
     
    <!-- "https://cdn.pixabay.com/photo/2020/08/17/22/00/porridge-5496533_960_720.jpg" -->
         
