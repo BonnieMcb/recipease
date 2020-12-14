@@ -17,3 +17,7 @@ only show favourite buttons when logged in OR
 attributes:
     for add recipe tickboxes
     https://stackoverflow.com/questions/5799090/remove-whitespace-and-make-all-lowercase-in-a-string-for-python
+
+    for m=Materialize dropdown validation workaround
+    jquery code copied from Code Institute lesson Course  Mini Project | Putting It All Together  Adding A Task - Writing to the Database  Materialize Form Validation
+
