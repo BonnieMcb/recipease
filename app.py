@@ -99,6 +99,16 @@ def favourites():
     return redirect(url_for("login"))
 
 
+@app.route("/my_recipes")
+def my_recipes():
+    # from session user, get username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    my_recipes = mongo.db.recipes.find({"created_by": session["user"]})
+
+    return render_template("my_recipes.html", recipes=my_recipes)
+
+
 @app.route("/logout")
 def logout():
     # remove the user from the session
