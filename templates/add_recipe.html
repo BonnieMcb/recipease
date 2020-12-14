@@ -1,7 +1,11 @@
 {% extends "base.html" %}
+{% block header %}
+<h4 class=" page-header center-align">Add Recipe</h4>
+{% endblock%}
+
 {% block content %}
 
-    <h3 class="center-align">Add Recipe</h3>
+
 
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">

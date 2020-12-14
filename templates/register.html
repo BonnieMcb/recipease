@@ -1,7 +1,12 @@
 {% extends "base.html" %}
+
+{% block header %}
+<h4 class=" page-header center-align">Register</h4>
+{% endblock%}
+
 {% block content %}
 
-    <h3 class="center-align">Register</h3>
+    
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">

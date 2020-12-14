@@ -51,6 +51,9 @@
 
 </header>
 
+{% block header %}
+{% endblock%}
+
 <section>
     <!-- flash messages -->
     {% with messages = get_flashed_messages() %}
@@ -63,6 +66,7 @@
         {% endif %}
     {% endwith%}
 </section>
+
 
 <main class="container">
     {% block content %}

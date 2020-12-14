@@ -1,7 +1,10 @@
 {% extends "base.html" %}
+{% block header %}
+<h4 class=" page-header center-align">Log in</h4>
+{% endblock%}
+
 {% block content %}
 
-    <h3 class="center-align">Log In</h3>
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
