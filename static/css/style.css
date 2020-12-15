@@ -5,3 +5,11 @@ div.nav-wrapper {
 h4.page-header {
     background-color: #ffd166;
 }
+
+.edit-button { 
+    background-color: #26547c;
+}
+
+.delete-button {
+    background-color: #06d6a0;
+}
