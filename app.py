@@ -137,7 +137,19 @@ def add_recipe():
 
     categories = mongo.db.categories.find().sort("category", 1)
     allergen = mongo.db.allergen.find().sort("allergen_name", 1)
-    return render_template("/add_recipe.html", categories=categories, allergen=allergen)
+    return render_template(
+        "/add_recipe.html", categories=categories, allergen=allergen)
+
+
+@app.route("/edit_recipe/<recipes_id>", methods=["GET", "POST"])
+def edit_recipe(recipes_id):
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+
+    categories = mongo.db.categories.find().sort("category", 1)
+    allergen = mongo.db.allergen.find().sort("allergen_name", 1)
+    return render_template(
+        "/edit_recipe.html", recipes=recipes, categories=categories,
+        allergen=allergen)
 
 
 if __name__ == "__main__":

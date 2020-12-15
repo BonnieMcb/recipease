@@ -26,7 +26,8 @@
                         time: {{ recipes.time }}<br>
                         by: {{ recipes.created_by }}<br>
                     </div>
-                    <a class="waves-effect waves-light btn-small edit-button">Edit</a> <a class="waves-effect waves-light btn-small delete-button">Delete</a>
+                    <a href="{{ url_for('edit_recipe', recipes_id=recipes._id) }}" class="waves-effect waves-light btn-small edit-button">Edit</a> 
+                    <a class="waves-effect waves-light btn-small delete-button">Delete</a>
                 </div>
             </div>
             {% endfor %}
