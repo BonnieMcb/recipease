@@ -51,6 +51,7 @@
                             <label for="{{ lowername }}">
                                 {% if x.allergen_name == recipes.allergen_name %}
                                     <input type="checkbox" id="{{ lowername }}" name="allergen_name" value="{{ lowername }}" class="validate" checked/>
+                                    <span>{{ x.allergen_name }}</span>
                                 {% else %}
                                     <input type="checkbox" id="{{ lowername }}" name="allergen_name" value="{{ lowername }}" class="validate"/>
                                     <span>{{ x.allergen_name }}</span>
