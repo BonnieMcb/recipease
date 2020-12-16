@@ -125,12 +125,13 @@ def add_recipe():
             "recipe_name": request.form.get("recipe_name"),
             "servings": request.form.get("servings"),
             "time": request.form.get("time"),
-            "allergen_name": request.form.getlist("allergen_name"),
+            "allergen_name": request.form.getlist("allergen_name[]"),
             "image": request.form.get("image"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
             "created_by": session["user"]
         }
+        print(recipe)
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe added!")
         return redirect(url_for("recipes"))
@@ -149,19 +150,22 @@ def edit_recipe(recipes_id):
             "recipe_name": request.form.get("recipe_name"),
             "servings": request.form.get("servings"),
             "time": request.form.get("time"),
-            "allergen_name": request.form.getlist("allergen_name"),
+            "allergen_name": request.form.getlist("allergen_name[]"),
             "image": request.form.get("image"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
             "created_by": session["user"]
         }
+        print(recipe)
         mongo.db.recipes.update({"_id": ObjectId(recipes_id)}, recipe)
         flash("Recipe successfully updated!")
         return redirect(url_for("my_recipes"))
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    print(recipes)
 
     categories = mongo.db.categories.find().sort("category", 1)
-    allergen = mongo.db.allergen.find().sort("allergen_name", 1)
+    allergen = list(mongo.db.allergen.find())
+    print(allergen)
     return render_template(
         "/edit_recipe.html", recipes=recipes, categories=categories,
         allergen=allergen)

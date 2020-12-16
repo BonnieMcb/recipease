@@ -49,7 +49,7 @@
                         {% for x in allergen %}
                         {% set lowername = ''.join(x.allergen_name.split()).lower() %}
                             <label for="{{ lowername }}">
-                                {% if x.allergen_name == recipes.allergen_name %}
+                                {% if lowername in recipes.allergen_name %}
                                     <input type="checkbox" id="{{ lowername }}" name="allergen_name" value="{{ lowername }}" class="validate" checked/>
                                     <span>{{ x.allergen_name }}</span>
                                 {% else %}
