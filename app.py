@@ -178,6 +178,11 @@ def delete_recipe(recipes_id):
     return redirect(url_for("my_recipes"))
 
 
+@app.route("/show_recipe")
+def show_recipe():
+    return render_template("/show_recipe.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
