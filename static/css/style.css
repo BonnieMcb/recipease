@@ -6,6 +6,12 @@ h4.page-header {
     background-color: #ffd166;
 }
 
+img.recipe-picture {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
 .edit-button { 
     background-color: #26547c;
 }
