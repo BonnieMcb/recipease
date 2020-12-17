@@ -31,11 +31,11 @@ img.recipe-picture {
 }  
 */
 
-/* list of allergens on show recipe page */
-li.icon {
+li.icon, li.footer-socials, li.footer-links {
     display: inline; 
 } 
 
+/* list of allergens on show recipe page */
 .icon {
     padding: 5px;
     width: 50px;
@@ -107,4 +107,15 @@ li.icon {
 
 .treenuts {
     background: #663300;
+}
+
+.footer a {
+    font-size: large;
+    color: #ffffff;
+}
+
+.footer, footer div.row, footer ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
 }
