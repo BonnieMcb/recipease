@@ -9,6 +9,7 @@
         <div class="row">
             {% for recipes in recipes %}
             <div class="col s6 m3">
+                <a href="{{ url_for('show_recipe', recipes_id=recipes._id) }}">
                 <div class="card small">
                     <div class="card-image">
                     {% if recipes.image %}
@@ -25,6 +26,7 @@
                         by: {{ recipes.created_by }}<br>
                     </div>
                 </div>
+                </a>
             </div>
             {% endfor %}
         </div>

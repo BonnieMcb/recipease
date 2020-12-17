@@ -178,9 +178,11 @@ def delete_recipe(recipes_id):
     return redirect(url_for("my_recipes"))
 
 
-@app.route("/show_recipe")
-def show_recipe():
-    return render_template("/show_recipe.html")
+@app.route("/show_recipe/<recipes_id>", methods=["GET"])
+def show_recipe(recipes_id):
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    return render_template(
+        "/show_recipe.html", recipes=recipes,)
 
 
 if __name__ == "__main__":
