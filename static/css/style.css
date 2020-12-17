@@ -19,3 +19,92 @@ img.recipe-picture {
 .delete-button {
     background-color: #06d6a0;
 }
+
+/*    This flex stuff for the show page is not quite right....
+
+.flex-container{
+    display: flex;
+}
+
+.space-between { 
+  justify-content: space-between; 
+}  
+*/
+
+/* list of allergens on show recipe page */
+li.icon {
+    display: inline; 
+} 
+
+.icon {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    line-height: 39px;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.celery {
+    background: #00cc00;
+}
+
+.crustaceans {
+    background: #ff6600;
+}
+
+.eggs {
+    background: #ffff00;
+}
+
+.fish {
+    background: #a3a3c2;
+}
+
+.gluten {
+    background: #df980c;
+}
+
+.lupin {
+    background: #9900cc;
+}
+
+.milk {
+    background: #3399ff;
+}
+
+.dairy {
+    background: #3399ff;
+}
+
+.molluscs {
+    background: #ff66ff;
+}
+
+.mustard {
+    background: #573105;
+}
+
+.peanuts {
+    background: #ffcc99;
+}
+
+.sesame {
+    background: #f7f745;
+}
+
+.soybeans {
+    background: #339933;
+}
+
+.sulphur {
+    background: #000000;
+}
+
+.treenuts {
+    background: #663300;
+}

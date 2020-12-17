@@ -127,8 +127,8 @@ def add_recipe():
             "time": request.form.get("time"),
             "allergen_name": request.form.getlist("allergen_name[]"),
             "image": request.form.get("image"),
-            "ingredients": request.form.get("ingredients"),
-            "method": request.form.get("method"),
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
             "created_by": session["user"]
         }
         print(recipe)
