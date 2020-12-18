@@ -35,7 +35,6 @@ li.icon, li.footer-socials, li.footer-links {
     display: inline; 
 } 
 
-/* list of allergens on show recipe page */
 .icon {
     padding: 5px;
     width: 50px;
@@ -48,7 +47,35 @@ li.icon, li.footer-socials, li.footer-links {
     text-align: center;
     border-radius: 50px;
 }
+.card .card-title{
+   /*  background-color: rgba(236,239,241, 0.5); card-cover may be better */
+    font-weight: 600;
+}
 
+#card-allergens{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+#card-allergens li {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+    line-height: 28px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.7em;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.card .card-content {
+    padding: 15px;
+    border-radius: 0 0 2px 2px;
+}
+
+/* ------------------ list of allergens on show recipe page  ---------------- */
 .celery {
     background: #00cc00;
 }
@@ -109,9 +136,18 @@ li.icon, li.footer-socials, li.footer-links {
     background: #663300;
 }
 
+/* ------------------ Footer ---------------- */
+
+footer {
+    position: static;
+    bottom: 0;
+    width: 100%;
+}
+
 .footer a {
     font-size: large;
     color: #ffffff;
+    text-decoration: none;
 }
 
 .footer, footer div.row, footer ul {
@@ -119,3 +155,5 @@ li.icon, li.footer-socials, li.footer-links {
     margin-bottom: 0px;
     padding-top: 10px;
 }
+
+
