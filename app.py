@@ -127,8 +127,8 @@ def add_recipe():
             "time": request.form.get("time"),
             "allergen_name": request.form.getlist("allergen_name[]"),
             "image": request.form.get("image"),
-            "ingredients": request.form.getlist("ingredients"),
-            "method": request.form.getlist("method"),
+            "ingredients": request.form.get("ingredients"),
+            "method": request.form.get("method"),
             "created_by": session["user"]
         }
         print(recipe)
@@ -181,9 +181,11 @@ def delete_recipe(recipes_id):
 @app.route("/show_recipe/<recipes_id>", methods=["GET"])
 def show_recipe(recipes_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    ingredients = recipes.get("ingredients").split(',')
+    methods = recipes.get("method").split(',')
     return render_template(
-        "/show_recipe.html", recipes=recipes,)
-
+        "/show_recipe.html", recipes=recipes, ingredients=ingredients,
+        methods=methods)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

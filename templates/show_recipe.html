@@ -30,16 +30,21 @@
         <div class="row">
             <div class="col s6">
                 <h5>Ingredients</h5>
+                
                 <ul>
-                {% for x in recipes.ingredients %}
-                    <li>{{ x }}</li>
+                {% for ingredient in ingredients %}
+                    <li>{{ ingredient.strip().capitalize() }}</li>
                 {% endfor %}
                 </ul>
               
             </div>
             <div class="col s6">
                 <h5>Method</h5>
-                <p>{{ recipes.method }}</p>
+                <ul>
+                {% for method in methods %}
+                    <li>{{ method.strip().capitalize() }}</li>
+                {% endfor %}
+                </ul>
             </div>
         </div>
         <div class="divider"></div>
