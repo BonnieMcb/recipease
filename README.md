@@ -21,3 +21,11 @@ attributes:
     for m=Materialize dropdown validation workaround
     jquery code copied from Code Institute lesson Course  Mini Project | Putting It All Together  Adding A Task - Writing to the Database  Materialize Form Validation
 
+Breakfast by Edward Boatman from the Noun Project
+Cake by starwin from the Noun Project
+Dessert by Handicon from the Noun Project
+dinner by Adrien Coquet from the Noun Project
+Salad by Normansyah from the Noun Project
+Fruit by Lnhi from the Noun Project
+snack by Alan Davis from the Noun Project
+Soup by Aneeque Ahmed from the Noun Project

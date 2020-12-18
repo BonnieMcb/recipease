@@ -187,6 +187,7 @@ def show_recipe(recipes_id):
         "/show_recipe.html", recipes=recipes, ingredients=ingredients,
         methods=methods)
 
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
