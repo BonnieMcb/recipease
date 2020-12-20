@@ -12,6 +12,14 @@ img.recipe-picture {
     object-fit: cover;
 }
 
+label.allergen-label {
+    padding-right: 18px;
+}
+
+span.allergen-tick-span {
+    padding-left: 25px !important;
+}
+
 .edit-button { 
     background-color: #26547c;
 }
@@ -19,6 +27,8 @@ img.recipe-picture {
 .delete-button {
     background-color: #06d6a0;
 }
+
+
 
 /*    This flex stuff for the show page is not quite right....
 

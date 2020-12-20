@@ -44,9 +44,9 @@
                     <div>
                         {% for x in allergen %}
                         {% set lowername = ''.join(x.allergen_name.split()).lower() %}
-                            <label for="{{ lowername }}">
+                            <label class="allergen-label" for="{{ lowername }}">
                                 <input type="checkbox" id="{{ lowername }}" name="allergen_name[]" value="{{ lowername }}" class="validate"/>
-                                <span>{{ x.allergen_name }}</span>
+                                <span class="allergen-tick-span" >{{ x.allergen_name }}</span>
                             </label>
                        {% endfor %}
                     </div>
