@@ -1,10 +1,22 @@
 {% extends "base.html" %}
+
 {% block header %}
 <h4 class=" page-header center-align">Recipes</h4>
 {% endblock%}
 
 {% block content %}
 
+    <div class="input-field col s12">
+        <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate">
+            <option value="" disabled selected></option>
+            {% for allergen in allergens %}
+                <option value="{{ allergen.name }}">{{ allergen.name }}</option>
+            {% endfor %}
+        </select>
+        <button id="apply-filters">Apply Filters</button>
+        <!-- <i class="material-icons prefix">error_outline</i> -->
+        <label for="allergen_name">No recipes with the following allergens:</label> <!-- Make text a little larger? -->
+    </div>
     
         <div class="row">
             {% for recipes in recipes %}

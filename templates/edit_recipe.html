@@ -46,8 +46,8 @@
                 <div class="input-field col s12">
                     Tick all allergens contained within the dish.
                     <div>
-                        {% for x in allergen %}
-                        {% set lowername = ''.join(x.allergen_name.split()).lower() %}
+                        {% for allergen in allergens %}
+                        {% set lowername = ''.join(allergen.name.split()).lower() %}
                             <label for="{{ lowername }}">
                                 {% if lowername in recipes.allergen_name %}
                                     <input type="checkbox" id="{{ lowername }}" name="allergen_name" value="{{ lowername }}" class="validate" checked/>

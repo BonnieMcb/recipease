@@ -28,13 +28,38 @@ def home():
 
 @app.route("/recipes")
 def recipes():
-    recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes)
+    allergens = mongo.db.allergens.find()
+
+    # default is no filtering
+    user_filter = None
+    url_filter = None
+
+    # if a user is logged in, get their allergens
+    username = session.get("user")
+    if username:
+        user = mongo.db.users.find_one({"username": username})
+        user_filter = user["allergen_name"]
+
+    # if url filter parameters are set
+    url_params = request.args.get("filter")
+    if url_params:
+        url_filter = url_params.split('-')
+
+    filter = []
+    if user_filter:
+        filter += user_filter
+    if url_filter:
+        filter += url_filter
+
+    recipes = mongo.db.recipes.find({"allergen_name": {"$nin": filter}})
+
+    return render_template(
+        "recipes.html", recipes=recipes, allergens=allergens)
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    allergen = mongo.db.allergen.find()
+    allergens = mongo.db.allergens.find()
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -44,11 +69,17 @@ def register():
             flash("Username already exists")
             return redirect(url_for("register"))
 
+        # sanitise user input allergen name for matching, with help from:
+        # https://stackoverflow.com/a/19562453/14135937
+        allergen_name = request.form.getlist("allergen_name")
+        allergens = [''.join(x.split()).lower() for x in allergen_name]
+
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "allergen_name": request.form.getlist("allergen_name")
+            "allergen_name": allergens
         }
+
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
@@ -56,7 +87,7 @@ def register():
         flash("Registration successfull")
         return redirect(url_for("favourites", username=session["user"]))
 
-    return render_template("register.html", allergen=allergen)
+    return render_template("register.html", allergens=allergens)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -137,9 +168,9 @@ def add_recipe():
         return redirect(url_for("recipes"))
 
     categories = mongo.db.categories.find().sort("category", 1)
-    allergen = mongo.db.allergen.find().sort("allergen_name", 1)
+    allergens = mongo.db.allergens.find().sort("allergen_name", 1)
     return render_template(
-        "/add_recipe.html", categories=categories, allergen=allergen)
+        "/add_recipe.html", categories=categories, allergens=allergens)
 
 
 @app.route("/edit_recipe/<recipes_id>", methods=["GET", "POST"])
@@ -160,15 +191,14 @@ def edit_recipe(recipes_id):
         mongo.db.recipes.update({"_id": ObjectId(recipes_id)}, recipe)
         flash("Recipe successfully updated!")
         return redirect(url_for("my_recipes"))
-    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
-    print(recipes)
 
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     categories = mongo.db.categories.find().sort("category", 1)
-    allergen = list(mongo.db.allergen.find())
-    print(allergen)
+    allergens = mongo.db.allergens.find()
+
     return render_template(
         "/edit_recipe.html", recipes=recipes, categories=categories,
-        allergen=allergen)
+        allergens=allergens)
 
 
 @app.route("/delete_recipe/<recipes_id>")
