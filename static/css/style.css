@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 html {
     font-family: 'Open Sans', sans-serif;
 }
@@ -50,6 +60,9 @@ button.btn-large {
     background-color: #26547c;
 }
 
+button.btn{
+    background-color: #26547c;
+}
 /*    This flex stuff for the show page is not quite right....
 
 .flex-container{
@@ -62,7 +75,8 @@ button.btn-large {
 */
 
 li.icon, li.footer-socials, li.footer-links {
-    display: inline; 
+    display: inline;
+    padding: 0 12px 0 12px;
 } 
 
 .icon {
@@ -167,6 +181,10 @@ li.icon, li.footer-socials, li.footer-links {
 }
 
 /* ------------------ Footer ---------------- */
+
+.page-footer {
+    background-color: #ef476f;
+}
 
 footer {
     position: static;
