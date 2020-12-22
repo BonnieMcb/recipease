@@ -16,6 +16,12 @@
 <body>
 
 <header>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{{ url_for('login') }}">Log In</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
+    </ul>  
+    
     <nav>
         <div class="nav-wrapper">
             <a href="{{ url_for('home') }}" class="brand-logo">Recipease</a>
@@ -30,8 +36,8 @@
                     <li><a href="{{ url_for('favourites', username=session['user']) }}">Favourites</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>    
                 {% endif %}
             </ul>
         </div>
