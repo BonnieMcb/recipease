@@ -10,7 +10,7 @@
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel teal">
+            <div class="card-panel blue lighten-5">
                  <!-- username -->
                 <div class="row">
                     <div class="input-field col s12">
@@ -33,8 +33,8 @@
                 <div class="input-field col s12">
                     <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate">
                         <option value="" disabled selected>            </option>
-                        {% for x in allergen %}
-                            <option value="{{ x.allergen_name }}">{{ x.allergen_name }}</option>
+                        {% for allergen in allergens %}
+                            <option value="{{ allergen.name }}">{{ allergen.name }}</option>
                         {% endfor %}
                     </select>
                     <!-- <i class="material-icons prefix">error_outline</i> -->
