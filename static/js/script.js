@@ -1,10 +1,15 @@
   $(document).ready(function(){
+
     $('.sidenav').sidenav();
-    $('select').formSelect();
     $(".dropdown-trigger").dropdown();
+
+    // select must come after dropdown, due to this bug in materialize:
+    // https://github.com/Dogfalo/materialize/issues/6073
+    $('select').formSelect();
     $('.modal').modal();
 
     validateMaterializeSelect();
+
     function validateMaterializeSelect() {
         let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
         let classInvalid = { "border-bottom": "1px solid #f44336", "box-shadow": "0 1px 0 0 #f44336" };
