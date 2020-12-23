@@ -14,6 +14,8 @@
                 {% set lowername = ''.join(allergen.name.split()).lower() %}
                 {% if lowername in filters %}
                     <option value="{{ allergen.name }}" selected>{{ allergen.name }}</option>
+                {% elif lowername in user_allergens %}
+                    <option value="{{ allergen_name }}" disabled>{{ allergen.name }}</option>
                 {% else %}
                     <option value="{{ allergen.name }}">{{ allergen.name }}</option>
                 {% endif %}

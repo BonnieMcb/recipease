@@ -31,8 +31,8 @@ def recipes():
     allergens = mongo.db.allergens.find()
 
     # default is no filtering
-    user_filter = None
-    url_filter = None
+    user_filter = []
+    url_filter = []
 
     # if a user is logged in, get their allergens
     username = session.get("user")
@@ -53,12 +53,9 @@ def recipes():
 
     recipes = mongo.db.recipes.find({"allergen_name": {"$nin": filter}})
 
-    filters = []
-    if url_filter:
-        filters = url_filter
-
     return render_template(
-        "recipes.html", recipes=recipes, allergens=allergens, filters=filters)
+        "recipes.html", recipes=recipes, allergens=allergens,
+        filters=url_filter, user_allergens=user_filter)
 
 
 @app.route("/register", methods=["GET", "POST"])
