@@ -13,6 +13,10 @@ nice TODO:
 only show favourite buttons when logged in OR 
     flash message/tooltip(Materialize) that one must be logged in to save to favourites
 
+testing while coding for example:
+flash("Permission to edit")
+write about user provided input validation / access permissions etc
+
 
 attributes:
     for add recipe tickboxes

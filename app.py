@@ -175,30 +175,40 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipes_id>", methods=["GET", "POST"])
 def edit_recipe(recipes_id):
-    if request.method == "POST":
-        recipe = {
-            "category": request.form.get("category"),
-            "recipe_name": request.form.get("recipe_name"),
-            "servings": request.form.get("servings"),
-            "time": request.form.get("time"),
-            "allergen_name": request.form.getlist("allergen_name[]"),
-            "image": request.form.get("image"),
-            "ingredients": request.form.get("ingredients"),
-            "method": request.form.get("method"),
-            "created_by": session["user"]
-        }
-        print(recipe)
-        mongo.db.recipes.update({"_id": ObjectId(recipes_id)}, recipe)
-        flash("Recipe successfully updated!")
+    # from session user, get username from db
+    user = mongo.db.users.find_one({"username": session["user"]})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+
+    if user["username"] == recipe["created_by"]:
+
+        if request.method == "POST":
+            recipe_edit = {
+                "category": request.form.get("category"),
+                "recipe_name": request.form.get("recipe_name"),
+                "servings": request.form.get("servings"),
+                "time": request.form.get("time"),
+                "allergen_name": request.form.getlist("allergen_name[]"),
+                "image": request.form.get("image"),
+                "ingredients": request.form.get("ingredients"),
+                "method": request.form.get("method"),
+                "created_by": session["user"]
+            }
+            print(recipe_edit)
+            mongo.db.recipes.update({"_id": ObjectId(recipes_id)}, recipe_edit)
+            flash("Recipe successfully updated!")
+            return redirect(url_for("my_recipes"))
+
+        recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+        categories = mongo.db.categories.find().sort("category", 1)
+        allergens = mongo.db.allergens.find()
+
+        return render_template(
+            "/edit_recipe.html", recipes=recipes, categories=categories,
+            allergens=allergens)
+
+    else:
+        flash("You can only edit your own recipes")
         return redirect(url_for("my_recipes"))
-
-    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
-    categories = mongo.db.categories.find().sort("category", 1)
-    allergens = mongo.db.allergens.find()
-
-    return render_template(
-        "/edit_recipe.html", recipes=recipes, categories=categories,
-        allergens=allergens)
 
 
 @app.route("/delete_recipe/<recipes_id>")
