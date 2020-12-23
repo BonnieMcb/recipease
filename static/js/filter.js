@@ -27,6 +27,6 @@ $(document).ready(function(){
 
     $('#clear-filters').on("click", function() {
 
-        applyFilter("");
+        url.searchParams.delete('filter');
     });
 })
