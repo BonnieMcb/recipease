@@ -1,5 +1,16 @@
 $(document).ready(function(){ 
 
+    function applyFilter(filter) {
+
+        // change URL Query Parameters
+        // code adapted from:
+        // https://usefulangle.com/post/81/javascript-change-url-parameters
+        var url = new URL(window.location.href);
+        url.searchParams.set('filter', filter);
+
+        window.location.assign(url);
+    }
+
     $('#apply-filters').on("click", function() {
 
         let filter = '';
@@ -14,12 +25,11 @@ $(document).ready(function(){
         // remove trailing dash
         filter = filter.slice(0, -1);
         
-        // change URL Query Parameters
-        // code adapted from:
-        // https://usefulangle.com/post/81/javascript-change-url-parameters
-        var url = new URL(window.location.href);
-        url.searchParams.set('filter', filter);
+        applyFilter(filter);
+    });
 
-        window.location.assign(url);
+    $('#clear-filters').on("click", function() {
+
+        applyFilter("");
     });
 })

@@ -7,15 +7,21 @@
 {% block content %}
 
     <div class="input-field col s12">
-        <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate">
-            <option value="" disabled selected></option>
+        <div>No recipes with the following allergens:</div> <!-- Make text a little larger? -->
+        <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate"-->
+            <option value="" disabled>Select allergen(s)</option>
             {% for allergen in allergens %}
-                <option value="{{ allergen.name }}">{{ allergen.name }}</option>
+                {% set lowername = ''.join(allergen.name.split()).lower() %}
+                {% if lowername in filters %}
+                    <option value="{{ allergen.name }}" selected>{{ allergen.name }}</option>
+                {% else %}
+                    <option value="{{ allergen.name }}">{{ allergen.name }}</option>
+                {% endif %}
             {% endfor %}
         </select>
-        <button id="apply-filters">Apply Filters</button>
+        <button id="apply-filters">Apply Filter</button>
+        <button id="clear-filters">Clear Filter</button>
         <!-- <i class="material-icons prefix">error_outline</i> -->
-        <label for="allergen_name">No recipes with the following allergens:</label> <!-- Make text a little larger? -->
     </div>
     
         <div class="row">

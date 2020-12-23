@@ -53,8 +53,12 @@ def recipes():
 
     recipes = mongo.db.recipes.find({"allergen_name": {"$nin": filter}})
 
+    filters = []
+    if url_filter:
+        filters = url_filter
+
     return render_template(
-        "recipes.html", recipes=recipes, allergens=allergens)
+        "recipes.html", recipes=recipes, allergens=allergens, filters=filters)
 
 
 @app.route("/register", methods=["GET", "POST"])
