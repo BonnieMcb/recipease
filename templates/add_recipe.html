@@ -15,7 +15,8 @@
                     <select id="category" name="category" class="validate" required>
                         <option value="" disabled selected>Choose Category</option>
                         {% for category in categories %}
-                            <option value="{{ category.category }}">{{ category.category }}</option>
+                        {% set lowername = ''.join(category.split()).lower() %}
+                            <option value="{{ lowername }}">{{ category.category }}</option>
                         {% endfor %}
                         </select>
                     <label for="category">Select Dish Category</label>

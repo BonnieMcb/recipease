@@ -32,9 +32,10 @@
                 <!-- allergens -->
                 <div class="input-field col s12">
                     <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate">
-                        <option value="" disabled selected>            </option>
+                        <option value="" disabled>Select allergen(s)</option>
                         {% for allergen in allergens %}
-                            <option value="{{ allergen.name }}">{{ allergen.name }}</option>
+                            {% set lowername = ''.join(allergen.name.split()).lower() %}
+                            <option value="{{ lowername }}">{{ allergen.name }}</option>
                         {% endfor %}
                     </select>
                     <!-- <i class="material-icons prefix">error_outline</i> -->

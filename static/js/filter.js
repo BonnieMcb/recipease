@@ -13,17 +13,14 @@ $(document).ready(function(){
 
     $('#apply-filters').on("click", function() {
 
-        let filter = '';
+        let active = [];
+        // With help from:
+        // https://stackoverflow.com/a/2950163/14135937
+        $('#allergen_name > option:selected').each(function() {
+            active.push($(this).val());
+        });
 
-        let values = $('#allergen_name').val();
-        // strip spaces and make string lowercase
-        for (let i in values) {
-            // code adapted from:
-            // https://stackoverflow.com/a/43208537/14135937
-            filter += values[i].toLowerCase().replace(/\s/g, '') + '-';
-        }
-        // remove trailing dash
-        filter = filter.slice(0, -1);
+        let filter = active.join('-');
         
         applyFilter(filter);
     });

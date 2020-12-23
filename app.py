@@ -70,10 +70,7 @@ def register():
             flash("Username already exists")
             return redirect(url_for("register"))
 
-        # sanitise user input allergen name for matching, with help from:
-        # https://stackoverflow.com/a/19562453/14135937
-        allergen_name = request.form.getlist("allergen_name")
-        allergens = [''.join(x.split()).lower() for x in allergen_name]
+        allergens = request.form.getlist("allergen_name")
 
         register = {
             "username": request.form.get("username").lower(),

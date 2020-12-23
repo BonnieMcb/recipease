@@ -7,17 +7,17 @@
 {% block content %}
 
     <div class="input-field col s12">
-        <div>No recipes with the following allergens:</div> <!-- Make text a little larger? -->
-        <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate"-->
+        <div>No recipes with the following allergens:</div>
+        <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate">
             <option value="" disabled>Select allergen(s)</option>
             {% for allergen in allergens %}
                 {% set lowername = ''.join(allergen.name.split()).lower() %}
                 {% if lowername in filters %}
-                    <option value="{{ allergen.name }}" selected>{{ allergen.name }}</option>
+                    <option value="{{ lowername }}" selected>{{ allergen.name }}</option>
                 {% elif lowername in user_allergens %}
-                    <option value="{{ allergen_name }}" disabled>{{ allergen.name }}</option>
+                    <option value="{{ lowername }}" disabled>{{ allergen.name }}</option>
                 {% else %}
-                    <option value="{{ allergen.name }}">{{ allergen.name }}</option>
+                    <option value="{{ lowername }}">{{ allergen.name }}</option>
                 {% endif %}
             {% endfor %}
         </select>
@@ -32,7 +32,7 @@
                 <div class="card small activator">
                     <div class="activator card-image">
                         {% if recipes.image %}
-                        <img class="recipe-picture activator" src={{ recipes.image }}>
+                        <img class="recipe-picture activator" src="{{ recipes.image }}">
                         {% else %}
                         <img class="recipe-picture activator" src="{{ url_for('static', filename='images/' + recipes.category + '.png' ) }}">
                         {% endif %}
