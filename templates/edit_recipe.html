@@ -48,13 +48,13 @@
                     <div>
                         {% for allergen in allergens %}
                         {% set lowername = ''.join(allergen.name.split()).lower() %}
-                            <label for="{{ lowername }}">
+                            <label class="allergen-label" for="{{ lowername }}">
                                 {% if lowername in recipes.allergen_name %}
                                     <input type="checkbox" id="{{ lowername }}" name="allergen_name" value="{{ lowername }}" class="validate" checked/>
-                                    <span>{{ allergen.name }}</span>
+                                    <span class="allergen-tick-span">{{ allergen.name }}</span>
                                 {% else %}
                                     <input type="checkbox" id="{{ lowername }}" name="allergen_name" value="{{ lowername }}" class="validate"/>
-                                    <span>{{ allergen.name }}</span>
+                                    <span class="allergen-tick-span">{{ allergen.name }}</span>
                                 {% endif %}
                             </label>
                        {% endfor %}
