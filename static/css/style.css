@@ -36,7 +36,7 @@ h4.page-header {
 
 img.recipe-picture {
     width: 100%;
-    height: 15vw;
+  /*  height: 15vw; delete i think */
     object-fit: cover;
 }
 
@@ -48,6 +48,10 @@ span.allergen-tick-span {
     padding-left: 25px !important;
 }
 
+.card.small .card-content{
+    overflow: scroll;
+}
+
 .edit-button { 
     background-color: #26547c;
 }
@@ -56,13 +60,12 @@ span.allergen-tick-span {
     background-color: #06d6a0;
 }
 
-button.btn-large {
-    background-color: #26547c;
+.bottom { 
+    position:absolute;                  
+    bottom:0;                          
+    left:0; 
 }
 
-button.btn{
-    background-color: #26547c;
-}
 /*    This flex stuff for the show page is not quite right....
 
 .flex-container{
