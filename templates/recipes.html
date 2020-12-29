@@ -27,30 +27,30 @@
     </div>
     
         <div class="row">
-            {% for recipes in recipes %}
+            {% for recipe in recipes %}
             <div class="activator col s6 m3">
                 <div class="card small activator">
                     <div class="activator card-image">
-                        {% if recipes.image %}
-                        <img class="recipe-picture activator" src="{{ recipes.image }}">
+                        {% if recipe.image %}
+                        <img class="recipe-picture activator" src="{{ recipe.image }}">
                         {% else %}
-                        <img class="recipe-picture activator" src="{{ url_for('static', filename='images/' + recipes.category + '.png' ) }}">
+                        <img class="recipe-picture activator" src="{{ url_for('static', filename='images/' + recipe.category + '.png' ) }}">
                         {% endif %}
-                        <span class="activator card-title blue-text text-darken-2">{{ recipes.recipe_name }}</span>
+                        <span class="activator card-title blue-text text-darken-2">{{ recipe.recipe_name }}</span>
                     </div>
                     <div class="activator card-content">
                          <ul class="activator" id="card-allergens">
-                            {% for x in recipes.allergen_name %}
+                            {% for x in recipe.allergen_name %}
                                 <li class="icon {{ x }}">{{ x }}</li>
                             {% endfor %}
                         </ul>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">{{ recipes.recipe_name }}<i class="material-icons right">close</i></span>
-                        time: {{ recipes.time }}<br>
-                        serves: {{ recipes.servings }}<br>
-                        by: {{ recipes.created_by }}<br>
-                        <a href="{{ url_for('show_recipe', recipes_id=recipes._id) }}">View recipe</a>
+                        <span class="card-title grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">close</i></span>
+                        time: {{ recipe.time }}<br>
+                        serves: {{ recipe.servings }}<br>
+                        by: {{ recipe.created_by }}<br>
+                        <a href="{{ url_for('show_recipe', recipes_id=recipe._id) }}">View recipe</a>
                     </div>
                 </div>
             </div>
