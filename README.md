@@ -1,6 +1,6 @@
 # Recipease 
 
-## Code Institute Milestone Project 2
+## Code Institute Milestone Project 3
 
 This website is created for educational purposes only.
 
@@ -90,13 +90,148 @@ I did not create the website fully in a design tool only to then create it again
 ![Wireframes](/assets/images/wireframes.png) 
 
 
+### Features
+
+#### Existing Features
+
+##### Consistent Features across all pages
+
+- Always-visible navigation bar with the *Recipease* logo on the left (linking to index.html) and links to the sub-pages on the right. 
+................... - Navigation bar changes to a hamburger button on small screens.
+- Sticky footer with links to social media.
+...................- A 'Back to Top' button that pops up on all pages once the user has scrolled more than 100px.
+
+##### Home
+
+- A simple but bright home page detailing briefly what the site is intended to do.
+- Three sections advertising its main and differentiating features, with the intent to entice the user to continue on to use the features of the site.
+
+"Feel at ease at Recipease that if you want to, you will never see recipes with your allergens in them."
+
+##### Recipes
+
+- The user is presented with an uncluttered page with small recipe cards (4 on large screens, 2 on small screens) which are all the same size with the same size pictures. Only picture, name and allergens are shown at first.
+- Upon clicking a card, more information relating to the recipe is shown, and with another click, the user is taken to the recipe page.
+- If the user has linked to a picture when they added the recipe, this will be displayed on the card. If not, a black and white icon will be displayed that relates to the type of dish (cake, dinner, soup etc.).
+- At the top of the page are two dropdown filters. The allergen filter has multiple selection options, the category dropdown only one. There are apply filter and clear filter buttons. 
+
+##### Recipe page
+
+- Information about the recipe is featured at the tope of the page, widely spaced and easy to scan. The allergens are displayed with the same colours as on the recipe cards.
+- Ingredients and method are divided into two columns that are next to each other on large screens and stack on top of each other on smaller screens.
+....... - Picture at bottom????
+
+##### Shop 
+
+- ??
+
+##### My Recipes
+
+- The user is presented with identical recipe cards as on the RECIPES page, but only the ones that they have added themselves.
+- On the cards there are EDIT and DELETE buttons. Clicking on DELETE will bring up a modal that asks the user if they definitely want to delete the recipe, or cancel the deletion. Clicking EDIT will redirect to the EDIT RECIPE page (see below).
+
+##### Add Recipe / Edit Recipe
+
+- The EDIT RECIPE page is identical to the ADD RECIPE one, but has all the information pre-selected and filled in.
+- The ADD/EDIT pages are layed out in a similar structure as the Recipe page, with widely spaced out sections for the vital information, and then the sections to fill in ingredients and methods at the bottom of the screen. 
+- At the bottom there are buttons to ADD/EDIT or CANCEL. 
+- In terms of input fields ................................................
+regex etc....
+
+##### Account
+
+- In order to unclutter the nav bar, the navigation links to pages related to a user's account were consolidated into an expandable ACCOUNT button, containing the options to LOG IN and REGISTER.
+describe verification and regex etc....
+
+
+#### Features To Be Implemented
+
+- 
+
+
+## Technologies Used
+
+#### Languages Used
+- HTML5
+- CSS3
+- jQuery
+- Python
+
+#### Frameworks, Libraries & Programs Used
+
+1. [MongoDB](https://www.mongodb.com/)
+    - MongoDB is a document-based database where content of the website is stored, read, edited and deleted.
+2. [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    - Flask is a web application framework.
+3. [Flask PyMongo] (https://flask-pymongo.readthedocs.io/en/latest/)
+    - v  MongoDB support for Flask applications
+4. [https://pymongo.readthedocs.io/en/stable/index.html](https://pymongo.readthedocs.io/en/stable/index.html)
+    - PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python
+5. [Werkzeug](https://palletsprojects.com/p/werkzeug/)
+    - Flask wraps Werkzeug, using it to handle the details of WSGI while providing more structure and patterns for defining powerful applications.
+6. [Jinja](https://palletsprojects.com/p/jinja/)
+    - Jinja2 is a full-featured template engine for Python.
+7. [BSON](https://www.mongodb.com/json-and-bson)
+    - BSON is the binary encoding of JSON-like documents that MongoDB uses when storing documents in collections.
+8. [Gitpod](https://www.gitpod.io/)
+    - Gitpod was the environment in which the site was created, using the terminal to commit to Git and Push to GitHub.
+9. [Github](https://github.com/)
+    - Hosting for software development and version control using Git.
+10. [Heroku](https://www.heroku.com/home)
+    - Heroku is a cloud platform as a service supporting several programming languages.
+11. [Materialize](https://materializecss.com/)
+    - A modern responsive front-end framework based on Material Design.
+12. [Google Fonts:](https://fonts.google.com/)
+    - Google fonts were used to import the 'Montserrat' font into the style.css file which is used on all pages throughout the project.
+13. [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
+14. [Figma](https://www.figma.com/) 
+    - Figma was used to create wireframes and aid design and layout decisions.
+
+
+
+
+## Testing
+
+The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there was no invalid HTML or CSS.
+
+-   [W3C Markup Validator](https://validator.w3.org/) Fully passed, no errors or warnings
+-   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) My CSS has no errors or warnings, but Bootstrap CSS intentionally does.
+
+### Testing User Stories
+
+#### 1. As a potential customer, I want to see services on offer and get a feel for the company.
+- The user is presented with a high-contrast, easily-readable navigation bar with links to other pages on the site. 
+- The eye is also drawn down to the hero image, with contrasting text clarifying what the company provides in just a few words.
+- The user can then scroll down to read more about the company, with “What we do” visible in tablet and mobile to invite scrolling. 
+- A ‘Back to top’ button is provided on all pages once the user scrolls a certain amount, and the nav bar is stuck to the top of the screen as you scroll, so the user never gets stuck at the bottom of a page with nowhere to go.
+#### 2. As a potential customer who has had a bad experience at a competitor, I want to know who the groomers are and if they are reliable.
+- A description of the team and their qualifications is provided on the home page, immediately followed by testimonials and links to social media for further investigation of the company’s reputation.
+#### 3. As a potential user, I browse websites on my mobile phone and want to have a good experience and be able to find and view the information I want.
+- The website is responsive on smaller screens with the result being an aesthetically-pleasing and functional site on all screen sizes.
+#### 4. As a potential customer I want to know if this place is easy to get to.
+- In addition to the address and contact information in the footer, there is also a page with an embedded google map, and parking/public transport information.
+#### 5. As a potential customer I want to know what other people say about this business.
+Testimonials are found on the home page, and the links to social media are visible on the high-contrast footer on every page.
+#### 6. As a returning or potential customer I want to be reminded of the services available and be able to make a booking easily.
+- The services are laid out in a clear and clean manner, with a text description, as well as pictograms to provide information at a glance. A ‘Book Now’ button under every different service links to the Bookings page.
+- The Bookings page has a short form with required fields, as well as the phone number at the top of the page for those who prefer to call.
+- The contact information for phone and email are also provided in the footer on every page.
+
+
+### Further Testing
+
+-   The website was tested on Google Chrome, Mozilla Firefox and Microsoft Edge browsers.
+-   The website was viewed, using Chrome Developer Tools, on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
+-   A large amount of testing was done to ensure that all pages were linking correctly.
+-   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+
+### Known Bugs
 
 
 
 
 
-materialize css
-jquery
 
 
 08/12/20 Gitpod was having some outage issues, also noted by CI. Seems one of my pushes did not go through.
