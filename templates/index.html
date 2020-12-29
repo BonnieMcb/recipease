@@ -13,7 +13,7 @@
             Welcome to Recipease, your friendly neighbourhood recipe website with a focus on allergen-free tasty meals and treats.
         </div>
         <br>
-        <div>Log in to save your favourite recipes into a collection, and add your own recipes, or simply browse the recipes as a guest.
+        <div><a href="{{ url_for('login') }}">Log in</a> or <a href="{{ url_for('register') }}">Register</a> to save your own recipes into a collection, or simply <a href="{{ url_for('recipes') }}">browse the recipes</a> as a guest. Multiple allergen filters can be selected so that you can feel at ease that your meal is right for you.
         </div>
         <br>
         <div class="row">
@@ -28,8 +28,9 @@
                 <p>Grandma's recipe card for her awesome chocolate cake looking faded and dog-eared? Add your favourite recipes here so you always have them to hand.</p>
             </div>
             <div class="col s4">
-                <h5>blablabla</h5>
-                <p>We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components</p>
+                <i class="fas fa-grin-alt home-icon"></i>
+                <h5>Feel at ease</h5>
+                <p>Feel at ease at Recipease... If you want to, as a registered user, you will never see recipes with your allergens in them.</p>
             </div>
         </div>
     </div>
