@@ -49,7 +49,7 @@ span.allergen-tick-span {
 }
 
 .card.small .card-content{
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
 .edit-button { 
@@ -60,10 +60,10 @@ span.allergen-tick-span {
     background-color: #06d6a0;
 }
 
-.bottom { 
-    position:absolute;                  
-    bottom:0;                          
-    left:0; 
+.top { 
+    position: absolute;                  
+    top: 10px;                          
+    left: 0; 
 }
 
 /*    This flex stuff for the show page is not quite right....
@@ -83,43 +83,50 @@ li.icon, li.footer-socials, li.footer-links {
 } 
 
 .icon {
+  /*  
     padding: 5px;
     width: 50px;
     height: 50px;
     margin: 5px;
     line-height: 39px;
+*/
     color: white;
     font-weight: bold;
     font-size: 1em;
     text-align: center;
-    border-radius: 50px;
+
+    line-height: 30px;
+
+    /*border-radius: 50px;*/
 }
-.card .card-title{
+.card .card-content .card-title{
    /*  background-color: rgba(236,239,241, 0.5); card-cover may be better */
     font-weight: 600;
-}
 
-#card-allergens{
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
+    background: #ef476f;
+    color: #FFF !important;
 
-#card-allergens li {
-    padding: 5px;
-    width: 50px;
-    height: 50px;
-    margin: 0px;
-    line-height: 28px;
-    color: white;
-    font-weight: bold;
-    font-size: 0.7em;
     text-align: center;
-    border-radius: 50px;
+    margin-bottom: 0;
+}
+
+.card.small .card-image {
+    max-height: 100%;
+}
+
+.card .allergen-icons {
+    display: grid;
+    grid-template-columns: repeat(7, 7fr);
+    grid-template-rows: 30px 30px;
 }
 
 .card .card-content {
-    padding: 15px;
-    border-radius: 0 0 2px 2px;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    padding: 0;
 }
 
 /* ------------------ list of allergens on show recipe page  ---------------- */

@@ -36,14 +36,15 @@
                         {% else %}
                         <img class="recipe-picture activator" src="{{ url_for('static', filename='images/' + recipe.category + '.png' ) }}">
                         {% endif %}
-                        <span class="activator card-title blue-text text-darken-2">{{ recipe.recipe_name }}</span>
                     </div>
                     <div class="activator card-content">
-                         <ul class="activator" id="card-allergens">
+                        <span class="activator card-title blue-text text-darken-2 truncate">{{ recipe.recipe_name }}</span>
+                        <div class="activator allergen-icons">
                             {% for x in recipe.allergen_name %}
-                                <li class="icon {{ x }}">{{ x }}</li>
+                            {% set initial = x[0] %}
+                                <div class="icon {{ x }}">{{ initial }}</div>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">close</i></span>
