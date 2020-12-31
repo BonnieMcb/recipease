@@ -26,37 +26,88 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/recipes")
-def recipes():
-    allergens = mongo.db.allergens.find()
+def get_filters():
+    # help from:
+    # https://www.geeksforgeeks.org/g-fact-41-multiple-return-values-in-python/
+    class Filters:
+        def __init__(self):
+            # default is no filtering
+            self.user = []
+            self.url = []
+            self.all = []
 
-    # default is no filtering
-    user_filter = []
-    url_filter = []
+    output = Filters()
 
     # if a user is logged in and has safe search on, get their allergens
     username = session.get("user")
     safe_search = session.get("safe_search")
     if username and safe_search:
         user = mongo.db.users.find_one({"username": username})
-        user_filter = user["allergen_name"]
+        output.user = user["allergen_name"]
 
     # if url filter parameters are set
     url_params = request.args.get("filter")
     if url_params:
-        url_filter = url_params.split('-')
+        output.url = url_params.split('-')
 
-    filter = []
-    if user_filter:
-        filter += user_filter
-    if url_filter:
-        filter += url_filter
+    if output.user:
+        output.all += output.user
+    if output.url:
+        output.all += output.url
 
-    recipes = mongo.db.recipes.find({"allergen_name": {"$nin": filter}})
+    return output
+
+
+@app.route("/recipes")
+def recipes():
+    allergens = mongo.db.allergens.find()
+
+    filters = get_filters()
+    recipes = mongo.db.recipes.find({"allergen_name": {"$nin": filters.all}})
+
+    safe_search = session.get("safe_search")
 
     return render_template(
         "recipes.html", recipes=recipes, allergens=allergens,
-        filters=url_filter, user_allergens=user_filter,
+        filters=filters.url, user_allergens=filters.user,
+        safe_search=safe_search)
+
+
+@app.route("/recipes/<category>")
+def recipes_cat(category):
+    allergens = mongo.db.allergens.find()
+
+    # check category exists and is valid
+    cat = mongo.db.categories.find_one({"category": category})
+    if not cat:
+        redirect(url_for("recipes"))
+
+    filters = get_filters()
+    recipes = mongo.db.recipes.find({
+        "category": category,
+        "allergen_name": {"$nin": filters.all}
+    })
+
+    safe_search = session.get("safe_search")
+
+    return render_template(
+        "recipes.html", recipes=recipes, allergens=allergens,
+        filters=filters.url, user_allergens=filters.user,
+        safe_search=safe_search)
+
+
+@app.route("/recipes/all")
+def all_recipes():
+    allergens = mongo.db.allergens.find()
+
+    filters = get_filters()
+    recipes = mongo.db.recipes.find({"allergen_name": {"$nin": filters.all}})
+
+    safe_search = session.get("safe_search")
+
+    return render_template(
+        "recipes.html", recipes=recipes, allergens=allergens,
+        filters=filters.url, user_allergens=filters.user,
         safe_search=safe_search)
 
 
