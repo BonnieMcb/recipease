@@ -34,10 +34,15 @@ h4.page-header {
 
 /* --------------------- recipe card ------------------------ */
 
+.card.small .card-image {
+    max-height: 100%;
+    height: 100%;
+}
+
 img.recipe-picture {
-    width: 100%;
-  /*  height: 15vw; delete i think */
-    object-fit: cover;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
 }
 
 label.allergen-label {
@@ -46,10 +51,6 @@ label.allergen-label {
 
 span.allergen-tick-span {
     padding-left: 25px !important;
-}
-
-.card.small .card-content{
-    /*overflow: scroll;*/
 }
 
 .edit-button { 
@@ -110,14 +111,12 @@ li.icon, li.footer-socials, li.footer-links {
     margin-bottom: 0;
 }
 
-.card.small .card-image {
-    max-height: 100%;
-}
-
 .card .allergen-icons {
     display: grid;
     grid-template-columns: repeat(7, 7fr);
     grid-template-rows: 30px 30px;
+    grid-auto-flow: column;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .card .card-content {
