@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+<h4 class=" page-header center-align">Home</h4>
+{% endblock%}
+
+{% block content %}
+
+<div>
+    <a href="{{ url_for('all_recipes') }}">
+        <div class="card small">
+            <div class="card-image">
+                <img src="{{ url_for('static', filename='images/all_recipes.png' ) }}">
+            </div>
+            <div class="card-content">
+                <div>Show All Recipes</div>
+            </div>
+        </div>
+    </a>
+    {% for x in categories %}
+        <a href="{{ url_for('recipes_cat', category=x.category) }}">
+            <div class="card small">
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/' + x.category + '.png' ) }}">
+                </div>
+                <div class="card-content">
+                    <div>{{ x.category }}</div>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+
+{% endblock %}

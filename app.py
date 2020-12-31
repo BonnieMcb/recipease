@@ -60,17 +60,10 @@ def get_filters():
 
 @app.route("/recipes")
 def recipes():
-    allergens = mongo.db.allergens.find()
-
-    filters = get_filters()
-    recipes = mongo.db.recipes.find({"allergen_name": {"$nin": filters.all}})
-
-    safe_search = session.get("safe_search")
+    cat = mongo.db.categories.find()
 
     return render_template(
-        "recipes.html", recipes=recipes, allergens=allergens,
-        filters=filters.url, user_allergens=filters.user,
-        safe_search=safe_search)
+        "categories.html", categories=cat)
 
 
 @app.route("/recipes/<category>")
