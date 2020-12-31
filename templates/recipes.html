@@ -39,6 +39,9 @@
         <button id="apply-filters">Apply Filter</button>
         <button id="clear-filters">Clear Filter</button>
     </div>
+    {% if recipes.count() == 0 %}
+    <h4 class="center">No recipes found.</h4>
+    {% endif %}
     <div class="row">
         {% for recipe in recipes %}
         <div class="activator col s6 m3">
