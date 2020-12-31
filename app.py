@@ -81,12 +81,13 @@ def recipes_cat(category):
         "allergen_name": {"$nin": filters.all}
     })
 
+    username = session.get("user")
     safe_search = session.get("safe_search")
 
     return render_template(
         "recipes.html", recipes=recipes, allergens=allergens,
         filters=filters.url, user_allergens=filters.user,
-        safe_search=safe_search)
+        safe_search=safe_search, username=username)
 
 
 @app.route("/recipes/all")
@@ -96,12 +97,13 @@ def all_recipes():
     filters = get_filters()
     recipes = mongo.db.recipes.find({"allergen_name": {"$nin": filters.all}})
 
+    username = session.get("user")
     safe_search = session.get("safe_search")
 
     return render_template(
         "recipes.html", recipes=recipes, allergens=allergens,
         filters=filters.url, user_allergens=filters.user,
-        safe_search=safe_search)
+        safe_search=safe_search, username=username)
 
 
 @app.route("/register", methods=["GET", "POST"])

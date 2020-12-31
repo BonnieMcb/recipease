@@ -7,6 +7,7 @@
 {% block content %}
 
     <div class="input-field col s12">
+        {% if username %}
         <div class="switch">
             <div>Safe search</div>
             <label>
@@ -20,6 +21,7 @@
                 On
             </label>
         </div>
+        {% endif %}
         <div>No recipes with the following allergens:</div>
         <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate">
             <option value="" disabled>Select allergen(s)</option>
@@ -37,7 +39,6 @@
         <button id="apply-filters">Apply Filter</button>
         <button id="clear-filters">Clear Filter</button>
     </div>
-    
     <div class="row">
         {% for recipe in recipes %}
         <div class="activator col s6 m3">
