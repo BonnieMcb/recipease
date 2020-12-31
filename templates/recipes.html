@@ -7,6 +7,19 @@
 {% block content %}
 
     <div class="input-field col s12">
+        <div class="switch">
+            <div>Safe search</div>
+            <label>
+                Off
+                {% if safe_search %}
+                    <input id="safe-search" type="checkbox" checked>
+                {% else %}
+                    <input id="safe-search" type="checkbox">
+                {% endif %}
+                <span class="lever"></span>
+                On
+            </label>
+        </div>
         <div>No recipes with the following allergens:</div>
         <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate">
             <option value="" disabled>Select allergen(s)</option>
@@ -23,41 +36,53 @@
         </select>
         <button id="apply-filters">Apply Filter</button>
         <button id="clear-filters">Clear Filter</button>
-        <!-- <i class="material-icons prefix">error_outline</i> -->
     </div>
     
-        <div class="row">
-            {% for recipe in recipes %}
-            <div class="activator col s6 m3">
-                <div class="card small activator">
-                    <div class="activator card-image">
-                        {% if recipe.image %}
-                        <img class="recipe-picture activator" src="{{ recipe.image }}">
-                        {% else %}
-                        <img class="recipe-picture activator" src="{{ url_for('static', filename='images/' + recipe.category + '.png' ) }}">
-                        {% endif %}
-                    </div>
-                    <div class="activator card-content">
-                        <span class="activator card-title blue-text text-darken-2 truncate">{{ recipe.recipe_name }}</span>
-                        <div class="activator allergen-icons">
-                            {% for x in recipe.allergen_name %}
-                            {% set initial = x[0] %}
-                                <div class="icon {{ x }}">{{ initial }}</div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">close</i></span>
-                        time: {{ recipe.time }}<br>
-                        serves: {{ recipe.servings }}<br>
-                        by: {{ recipe.created_by }}<br>
-                        <a href="{{ url_for('show_recipe', recipes_id=recipe._id) }}">View recipe</a>
+    <div class="row">
+        {% for recipe in recipes %}
+        <div class="activator col s6 m3">
+            <div class="card small activator">
+                <div class="activator card-image">
+                    {% if recipe.image %}
+                    <img class="recipe-picture activator" src="{{ recipe.image }}">
+                    {% else %}
+                    <img class="recipe-picture activator" src="{{ url_for('static', filename='images/' + recipe.category + '.png' ) }}">
+                    {% endif %}
+                </div>
+                <div class="activator card-content">
+                    <span class="activator card-title blue-text text-darken-2 truncate">{{ recipe.recipe_name }}</span>
+                    <div class="activator allergen-icons">
+                        {% for x in recipe.allergen_name %}
+                        {% set initial = x[0] %}
+                            <div class="icon {{ x }}">{{ initial }}</div>
+                        {% endfor %}
                     </div>
                 </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">close</i></span>
+                    time: {{ recipe.time }}<br>
+                    serves: {{ recipe.servings }}<br>
+                    by: {{ recipe.created_by }}<br>
+                    <a href="{{ url_for('show_recipe', recipes_id=recipe._id) }}">View recipe</a>
+                </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
+    </div>
     
-    
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+        <h4>Are you sure you wish to turn off Safe Search?</h4>
+            <p>You will see recipes containing allergens you are allergic to.</p>
+        </div>
+        <form id="safe-search-form" method="POST" action="{{ url_for('safe_search') }}">
+            <input type="checkbox" id="safe-search-enabled" name="safe-search-enabled" class="hide">
+            <div class="modal-footer">
+                <button class="btn-flat modal-close waves-effect waves-light" type="submit">Confirm</button>
+                <a href="#" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            </div>
+        </form>
+    </div>
 
 {% endblock %}

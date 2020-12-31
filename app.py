@@ -34,9 +34,10 @@ def recipes():
     user_filter = []
     url_filter = []
 
-    # if a user is logged in, get their allergens
+    # if a user is logged in and has safe search on, get their allergens
     username = session.get("user")
-    if username:
+    safe_search = session.get("safe_search")
+    if username and safe_search:
         user = mongo.db.users.find_one({"username": username})
         user_filter = user["allergen_name"]
 
@@ -55,7 +56,8 @@ def recipes():
 
     return render_template(
         "recipes.html", recipes=recipes, allergens=allergens,
-        filters=url_filter, user_allergens=user_filter)
+        filters=url_filter, user_allergens=user_filter,
+        safe_search=safe_search)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -224,6 +226,20 @@ def show_recipe(recipes_id):
     return render_template(
         "/show_recipe.html", recipes=recipes, ingredients=ingredients,
         methods=methods)
+
+
+@app.route("/safe_search", methods=["POST"])
+def safe_search():
+
+    enabled = request.form.get("safe-search-enabled")
+
+    username = session.get("user")
+    if username:
+        session["safe_search"] = enabled
+
+    # Redirect to current page, taken from here:
+    # https://stackoverflow.com/a/58367071
+    return redirect(request.referrer)
 
 
 if __name__ == "__main__":
