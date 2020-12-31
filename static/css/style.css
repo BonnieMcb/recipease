@@ -130,63 +130,73 @@ li.icon, li.footer-socials, li.footer-links {
 
 /* ------------------ list of allergens on show recipe page  ---------------- */
 .celery {
-    background: #00cc00;
+    background: hsl(120, 100%, 40%);
+    color: hsl(120, 100%, 10%);
 }
 
 .crustaceans {
-    background: #ff6600;
+    background: hsl(24, 100%, 50%);
+    color: hsl(24, 100%, 20%);
 }
 
 .eggs {
-    background: #ffff00;
+    background: hsl(20, 47%, 64%);
+    color: hsl(20, 47%, 34%);
 }
 
 .fish {
-    background: #a3a3c2;
+    background: hsl(240, 20%, 70%);
+    color: hsl(240, 20%, 40%);
 }
 
 .gluten {
-    background: #df980c;
+    background: hsl(15, 66%, 42%);
+    color: hsl(15, 66%, 12%);
 }
 
 .lupin {
-    background: #9900cc;
+    background: hsl(285, 100%, 40%);
+    color: hsl(285, 100%, 10%);
 }
 
 .milk {
-    background: #3399ff;
-}
-
-.dairy {
-    background: #3399ff;
+    background: hsl(210, 100%, 60%);
+    color: hsl(210, 100%, 30%);
 }
 
 .molluscs {
-    background: #ff66ff;
+    background: hsl(300, 100%, 70%);
+    color: hsl(300, 100%, 40%);
 }
 
 .mustard {
-    background: #573105;
+    background: hsl(48, 98%, 42%);
+    color: hsl(48, 98%, 12%);
 }
 
 .peanuts {
-    background: #ffcc99;
+    background: hsl(42, 86%, 78%);
+    color: hsl(42, 86%, 48%);
 }
 
 .sesame {
-    background: #f7f745;
+    background: hsl(60, 92%, 62%);
+    color: hsl(60, 92%, 32%);
 }
 
 .soybeans {
-    background: #339933;
+    background: hsl(120, 50%, 40%);
+    color: hsl(120, 50%, 10%);
 }
 
 .sulphur {
-    background: #000000;
+    background: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 30%);
 }
 
 .treenuts {
-    background: #663300;
+    background: hsl(30, 100%, 20%);
+    color: hsl(30, 100%, 0%);
 }
 
 /* ------------------ Footer ---------------- */
