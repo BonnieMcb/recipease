@@ -6,7 +6,7 @@ This website is created for educational purposes only.
 
 ![Responsive](...)    
     
-The brief for this third Milestone project was to ..............make a responsive and dynamic website using HTML5, CSS3 and JavaScript. CRUD .............It is the third of four projects as part of the Full Stack Web Development Program at The Code Institute. 
+The brief for this third Milestone project was to build a full-stack site that allows users to manage a common dataset about a particular domain. It is the third of four projects as part of the Full Stack Web Development Program at The Code Institute. 
 
 ## Table of Contents
 1. [**Project overview**](#project-overview)
@@ -25,6 +25,15 @@ Recipease was built using [Python](https://www.python.org/), [Flask](https://fla
 
 ### Goals
 The Recipease website is a web application where users are able to add and store their own recipes, as well as view recipes added by others. It is designed with users in mind who have multiple allergens in their family or friend circle. 
+
+
+
+.............Mission:
+............Our website is a place where you can share delicious recipes, and collect your favourites in one easily accessible place. NOT JUST delicious recipes, however! On this site, 
+
+..............Do you find it hard to find a recipe without your allergen in it? So, there’s a nut allergy in your family, but your sister in law is a coeliac and coming over for coffee, and it’s almost impossible to find a cake recipe that satisfies both needs and is tasty too! 
+
+
 
 #### Basic Goals
 Users visiting this site will be able to:
@@ -56,9 +65,23 @@ With time and resources allowing, other goals are to:
 3. I am throwing a dinner party and my friends have an assorted collection of allergies. I want to find a recipe for every course to satisfy all their requirements.
 4. 
 
+...............As a new user, I would like to find a recipe for dinner tonight.
+As a first time user finding a certain recipe on the site via a search engine, i would like to…..
+As a new user, I would like to browse and filter based on allergens and type of dish.
+As a registered user, I would like to easily be able to favourite recipes and navigate to my favourites easily.
+As a registered user with an allergy, I never want to see recipes with my allergens.
+As a registered user, I want to be able to add my own recipes so I can easily access my favourite baked goods recipes.
+As a registered user, I never want to see my allergens in recipes but I also want to add other allergen filters for when allergic friend’s come for dinner.
+As a user, I want to share the recipes with others.
+
+...............Site owner goals:
+I want to promote certain cooking tools / recipe books via my website.
+I want to create a customer base to target with occasional direct marketing and special offers. (If not necessarily by DM via email, then by showing special offers only to logged in users.
+
+
 ### Design
 
-The ![Materialize library](https://materializecss.com/) was used throughout in order to maintain a consistent and clean-looking site throughout the pages. I looked at various other recipe websites for inspiration and decided on small recipe cards on the recipes page. The recipe page itself (where ingredients and method is detailed) was inspired by the ![BBC Food website](https://www.bbc.co.uk/food), as I liked their simple design and I like to see the ingredients and method at the same time. 
+The [Materialize library](https://materializecss.com/) was used throughout in order to maintain a consistent and clean-looking site throughout the pages. I looked at various other recipe websites for inspiration and decided on small recipe cards on the recipes page. The recipe page itself (where ingredients and method is detailed) was inspired by the [BBC Food website](https://www.bbc.co.uk/food), as I liked their simple design and I like to see the ingredients and method at the same time. 
 
 ...????......
 
@@ -70,14 +93,14 @@ Colours:
 Allergens on for example restaurant menus, are often marked in different colours, for example https://www.dickinson.edu/images/Menu_Picture_for_Website.jpeg This is something that people with allergies are used to seeing, and I wanted to keep this for my website. Since my last two projects used fairly muted colours and I wanted to be a bit more playful with colours this time. 
 
 
- ![coolors](https://coolors.co/u/bonnie_mcbride)
+ [coolors](https://coolors.co/u/bonnie_mcbride)
 
 - ![#051f20](https://placehold.it/15/051f20/000000?text=+) #051f20 'Swamp'
 
 
 #### Typography
 
-I used ![Google fonts](https://fonts.google.com/) to embed fonts into my site by copying the code into the <head> of my html. I chose the easy to read Open Sans font throughout the site, which was complementary to the font I used for the name of the website. This is the Pacifico font. .......................
+I used [Google fonts](https://fonts.google.com/) to embed fonts into my site by copying the code into the <head> of my html. I chose the easy to read Open Sans font throughout the site, which was complementary to the font I used for the name of the website. This is the Pacifico font. .......................
 
 #### Imagery
 
@@ -227,6 +250,34 @@ Testimonials are found on the home page, and the links to social media are visib
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ### Known Bugs
+
+
+
+
+
+
+Deployment to Heroku
+
+1. Before deploying to Heroku, some files need to be set up within the IDE, Gitpod in this case.
+2. The requirements.txt file, and the Procfile can be created within the terminal by typing `<pip3 freeze > requirements.txt>` and `<echo web: python app.py > Procfile>`, respectively, making sure to delete any blank lines that sometimes get created. 
+3. Commit and push to the Github repo.
+4. Log into Heroku and on the dashboard go to NEW > Create New App. 
+5. Name the project and select the closest region.
+6. Choose Github as the deployment method, and connect the relevant Github repo.
+7. Next, go to Settings > Config Vars > Reveal Config Vars and set up the variables for the IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME. 
+8. In the Deploy tab, turn on Automatic Deployment, and then click Deploy Branch to deploy the master and allow Heroku to build the app. Once complete, clicking View App will open it.
+
+Cloning this repo
+
+1. At the top of this repository, click Clone or download.
+2. In the Clone with HTTPs dropdown, copy the clone URL for the repository.
+3. In your IDE terminal, change the current working directory to the location where you want to clone the repo.
+4. Type `<git clone>`, paste the URL you copied in Step 2, and then press Enter.
+5. In the terminal type `<pip3 install -r requirements.txt>` in order to install all required modules.
+6. Set up an env.py file in the root directory, and set the variables for IP, PORT, SECRET_KEY, MONGU_URI and MONGODB_NAME as described above.
+7. The web application can now be run by typing `<python3 app.py>` in the terminal.
+
+
 
 
 
