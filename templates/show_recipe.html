@@ -1,55 +1,60 @@
 {% extends "base.html" %}
 {% block header %}
-<h4 class=" page-header center-align">SHOW RECIPE</h4>
+<h4 class=" page-header center-align">{{ recipes.recipe_name }}</h4>
 {% endblock%}
 
 {% block content %}
 
 
+    <div class="section">
+        <div class="row flex-container space-between">
+            <img class="col s8" src="{{ recipes.image }}">
+            <div class="col s4">
+                <div class="row">
+                    <div>Added by:</div>
+                    <div class="list-item">{{ recipes.created_by }}</div>
+                </div>
+                <div class="row">
+                    <div>Time:</div>
+                    <div class="list-item">{{ recipes.time }}</div>
+                </div>
+                <div class="row">
+                    <div>Serves:</div>
+                    <div class="list-item">{{ recipes.servings }}</div>
+                </div>
+                <div class="row">
+                    <div>Contains:</div>
+                    <ul>
+                        {% for x in recipes.allergen_name %}
+                            <li class="icon {{ x }}">{{ x }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="divider"></div>
-        <div class="section">
-            <h5>{{ recipes.recipe_name }}</h5>
-            
-            <div class="row flex-container space-between">
-                <span class="col s4">Servings: {{ recipes.servings }}</span>
-                <span class="col s4">Added by: {{ recipes.created_by }}</span>
-                <span class="col s4">Time: {{ recipes.time }}</span>
-            </div>
-            
-            <p class="right-align">Add to Favourites</p>
-            <p class="right-align">share</p>
+    <div class="row">
+        <div class="col s12">
+            <h5>Ingredients</h5>
             <ul>
-                {% for x in recipes.allergen_name %}
-                    <li class="icon {{ x }}">{{ x }}</li>
-                {% endfor %}
+            {% for ingredient in ingredients %}
+                <li><span>{{ ingredient.strip().capitalize() }}</span></li>
+            {% endfor %}
             </ul>
-           
         </div>
-        <div class="divider"></div>
-        <div class="row">
-            <div class="col s6">
-                <h5>Ingredients</h5>
-                
-                <ul>
-                {% for ingredient in ingredients %}
-                    <li>{{ ingredient.strip().capitalize() }}</li>
-                {% endfor %}
-                </ul>
-              
-            </div>
-            <div class="col s6">
-                <h5>Method</h5>
-                <ul>
-                {% for method in methods %}
-                    <li>{{ method.strip().capitalize() }}</li>
-                {% endfor %}
-                </ul>
-            </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row">
+        <div class="col s12">
+            <h5>Method</h5>
+            <ol>
+            {% for method in methods %}
+                <li><span>{{ method.strip().capitalize() }}</span></li>
+            {% endfor %}
+            </ol>
         </div>
-        <div class="divider"></div>
-        
-          
+    </div>
+    <div class="divider"></div>
 
-    
-    
 {% endblock %}

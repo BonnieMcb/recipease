@@ -139,16 +139,18 @@ span.allergen-tick-span {
     margin-right: 5px;
 }
 
-/*    This flex stuff for the show page is not quite right....
-
-.flex-container{
-    display: flex;
+.list-item {
+    font-weight: 700;
+    margin-top: 0.25em;
 }
 
-.space-between { 
-  justify-content: space-between; 
-}  
-*/
+ol li {
+    font-weight: 700;
+}
+ol li span {
+    font-weight: 400;
+    margin-left: 1em;
+}
 
 li.icon, li.footer-socials, li.footer-links {
     display: inline;
