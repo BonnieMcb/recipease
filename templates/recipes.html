@@ -38,43 +38,23 @@
             </select>
             <button id="clear-filters" class="waves-effect waves-light btn-small right">Clear Filter</button>
             <button id="apply-filters" class="waves-effect waves-light btn-small right">Apply Filter</button>
+            <div id="allergen-key">
+                <!-- Thanks to: https://stackoverflow.com/a/34877466 -->
+                {% set _stub = allergens.rewind() %}
+                {% for allergen in allergens %}
+                    {% set lowername = ''.join(allergen.name.split()).lower() %}
+                    {% set initials = lowername[:2] %}
+                    <div class="single-allergen">
+                        <span class="icon {{ lowername }}">{{ initials }}</span><span class="allergen-key-label">{{ allergen.name }}</span>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
     <div id="content-row" class="row">
         {% if recipes.count() == 0 %}
         <h4 class="center">No recipes found.</h4>
         {% endif %}
-        {% for recipe in recipes %}
-        <div class="activator col s6 m3">
-            <div class="card small activator">
-                <div class="activator card-image">
-                    {% if recipe.image %}
-                    <img class="recipe-picture activator" style="background-image: url({{ recipe.image }});">
-                    {% else %}
-                    <img class="recipe-picture activator" style="background-image: url({{ url_for('static', filename='images/' + recipe.category + '.png')}});">
-                    {% endif %}
-                </div>
-                <div class="activator card-content">
-                    <div class="activator allergen-icons">
-                        {% for x in recipe.allergen_name %}
-                        {% set initial = x[:2] %}
-                            <div title="{{ x }}" class="icon {{ x }} tooltipped" data-position="top" data-tooltip="{{ x }}">{{ initial }}</div>
-                        {% endfor %}
-                    </div>
-                    <span class="activator card-title truncate">{{ recipe.recipe_name }}</span>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">close</i></span>
-                    time: {{ recipe.time }}<br>
-                    serves: {{ recipe.servings }}<br>
-                    by: {{ recipe.created_by }}<br>
-                    <a href="{{ url_for('show_recipe', recipes_id=recipe._id) }}">View recipe</a>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-
-{% set _stub = recipes.rewind() %}
         {% for recipe in recipes %}
         <div class="activator col s6 m3">
             <div class="card small activator">

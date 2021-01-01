@@ -16,7 +16,6 @@
 
     // Add margin to content when filter is pinned
     $(document).on('scroll', function() {
-        console.log("scrolling");
         let isPinned = $('#filter-row').hasClass('pinned');
         if (isPinned) {
             $("#content-row").addClass('filter-margin-top');

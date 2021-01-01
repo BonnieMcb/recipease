@@ -54,7 +54,30 @@ h4.page-header {
 }
 
 #content-row.filter-margin-top {
-    margin-top: 190px;
+    margin-top: 260px;
+}
+
+/* --------------------- allergen key ----------------------- */
+
+#allergen-key {
+    display: grid;
+    grid-template-columns: repeat(7, 7fr);
+    margin-top: 55px;
+    grid-gap: 10px;
+}
+
+#allergen-key span.icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+#allergen-key div.single-allergen {
+    font-size: 11px;
+    text-transform: uppercase;
 }
 
 /* --------------------- recipe card ------------------------ */
