@@ -6,43 +6,75 @@
 
 {% block content %}
 
-    <div class="input-field col s12">
-        {% if username %}
-        <div class="switch">
-            <div>Safe search</div>
-            <label>
-                Off
-                {% if safe_search %}
-                    <input id="safe-search" type="checkbox" checked>
-                {% else %}
-                    <input id="safe-search" type="checkbox">
-                {% endif %}
-                <span class="lever"></span>
-                On
-            </label>
+    <div id="filter-row" class="row pushpin">
+        <div class="input-field col s12">
+            {% if username %}
+            <div class="switch">
+                <div>Hide my allergen(s)</div>
+                <label>
+                    Off
+                    {% if safe_search %}
+                        <input id="safe-search" type="checkbox" checked>
+                    {% else %}
+                        <input id="safe-search" type="checkbox">
+                    {% endif %}
+                    <span class="lever"></span>
+                    On
+                </label>
+            </div>
+            {% endif %}
+            <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate">
+                <option value="" disabled>Select allergens to exclude</option>
+                {% for allergen in allergens %}
+                    {% set lowername = ''.join(allergen.name.split()).lower() %}
+                    {% if lowername in filters %}
+                        <option value="{{ lowername }}" selected>{{ allergen.name }}</option>
+                    {% elif lowername in user_allergens %}
+                        <option value="{{ lowername }}" disabled>{{ allergen.name }}</option>
+                    {% else %}
+                        <option value="{{ lowername }}">{{ allergen.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <button id="clear-filters" class="waves-effect waves-light btn-small right">Clear Filter</button>
+            <button id="apply-filters" class="waves-effect waves-light btn-small right">Apply Filter</button>
         </div>
-        {% endif %}
-        <div>No recipes with the following allergens:</div>
-        <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate">
-            <option value="" disabled>Select allergen(s)</option>
-            {% for allergen in allergens %}
-                {% set lowername = ''.join(allergen.name.split()).lower() %}
-                {% if lowername in filters %}
-                    <option value="{{ lowername }}" selected>{{ allergen.name }}</option>
-                {% elif lowername in user_allergens %}
-                    <option value="{{ lowername }}" disabled>{{ allergen.name }}</option>
-                {% else %}
-                    <option value="{{ lowername }}">{{ allergen.name }}</option>
-                {% endif %}
-            {% endfor %}
-        </select>
-        <button id="apply-filters">Apply Filter</button>
-        <button id="clear-filters">Clear Filter</button>
     </div>
-    {% if recipes.count() == 0 %}
-    <h4 class="center">No recipes found.</h4>
-    {% endif %}
-    <div class="row">
+    <div id="content-row" class="row">
+        {% if recipes.count() == 0 %}
+        <h4 class="center">No recipes found.</h4>
+        {% endif %}
+        {% for recipe in recipes %}
+        <div class="activator col s6 m3">
+            <div class="card small activator">
+                <div class="activator card-image">
+                    {% if recipe.image %}
+                    <img class="recipe-picture activator" style="background-image: url({{ recipe.image }});">
+                    {% else %}
+                    <img class="recipe-picture activator" style="background-image: url({{ url_for('static', filename='images/' + recipe.category + '.png')}});">
+                    {% endif %}
+                </div>
+                <div class="activator card-content">
+                    <div class="activator allergen-icons">
+                        {% for x in recipe.allergen_name %}
+                        {% set initial = x[:2] %}
+                            <div title="{{ x }}" class="icon {{ x }} tooltipped" data-position="top" data-tooltip="{{ x }}">{{ initial }}</div>
+                        {% endfor %}
+                    </div>
+                    <span class="activator card-title truncate">{{ recipe.recipe_name }}</span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">close</i></span>
+                    time: {{ recipe.time }}<br>
+                    serves: {{ recipe.servings }}<br>
+                    by: {{ recipe.created_by }}<br>
+                    <a href="{{ url_for('show_recipe', recipes_id=recipe._id) }}">View recipe</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+{% set _stub = recipes.rewind() %}
         {% for recipe in recipes %}
         <div class="activator col s6 m3">
             <div class="card small activator">
@@ -77,8 +109,8 @@
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
-        <h4>Are you sure you wish to turn off Safe Search?</h4>
-            <p>You will see recipes containing allergens you are allergic to.</p>
+        <h4>Are you sure?</h4>
+            <p>You will see see recipes which contain your allergens.</p>
         </div>
         <form id="safe-search-form" method="POST" action="{{ url_for('safe_search') }}">
             <input type="checkbox" id="safe-search-enabled" name="safe-search-enabled" class="hide">

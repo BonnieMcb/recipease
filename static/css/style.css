@@ -23,6 +23,10 @@ div.nav-wrapper {
 h4.page-header {
     background-color: #ffd166;
     text-transform: uppercase;
+    margin-top: 0;
+    padding: 0.2em;
+    font-weight: 700;
+    color: #333;
 }
 
 .home-icon {
@@ -30,6 +34,27 @@ h4.page-header {
     display: flex;
     justify-content: center;
     color: #06d6a0;
+}
+
+#filter-row {
+    background: #FFF;
+    z-index: 5;
+}
+
+#filter-row.pinned {
+    width: 90%;
+}
+
+#filter-row .switch {
+    margin-bottom: 1em;
+}
+
+#content-row {
+    margin-top: 0;
+}
+
+#content-row.filter-margin-top {
+    margin-top: 190px;
 }
 
 /* --------------------- recipe card ------------------------ */
@@ -51,6 +76,10 @@ label.allergen-label {
 
 span.allergen-tick-span {
     padding-left: 25px !important;
+}
+
+#clear-filters {
+    margin-left: 1em;
 }
 
 .edit-button { 
@@ -223,4 +252,21 @@ footer {
     padding-top: 10px;
 }
 
+/* Ensure filter row is correct size at different breakpoints */
+@media only screen and (min-width: 601px) {
+
+#filter-row.pinned {
+    width: 85%;
+}
+
+}
+
+@media only screen and (min-width: 993px) {
+
+#filter-row.pinned {
+    width: 70%;
+    max-width: 1280px;
+}
+
+}
 

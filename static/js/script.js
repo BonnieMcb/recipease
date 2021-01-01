@@ -9,6 +9,23 @@
     $('.modal').modal();
     $('.tooltipped').tooltip();
 
+    $('.pushpin').pushpin({
+        top: 128,
+        offset: 0
+    });
+
+    // Add margin to content when filter is pinned
+    $(document).on('scroll', function() {
+        console.log("scrolling");
+        let isPinned = $('#filter-row').hasClass('pinned');
+        if (isPinned) {
+            $("#content-row").addClass('filter-margin-top');
+        }
+        else {
+            $("#content-row").removeClass('filter-margin-top');
+        }
+    });
+
     validateMaterializeSelect();
 
     function validateMaterializeSelect() {
