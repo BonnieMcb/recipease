@@ -6,7 +6,9 @@
 {% block content %}
 
     
-        <div class="row">
+        <div id="my-recipes" class="row">
+            <h4>Hi {{ username }}!</h4>
+            <h5>Here are your recipes:</h5>
             {% for recipe in recipes %}
             <div class="col s6 m3">
                 <div class="card small activator">
@@ -14,7 +16,7 @@
                         {% if recipe.image %}
                             <img class="recipe-picture activator" style="background-image: url({{ recipe.image }});">
                         {% else %}
-                            <img class="recipe-picture activator" style="background-image: url({{ url_for('static', filename='images/' + recipe.category + '.png')}});">
+                            <img class="recipe-picture activator" style="background-image: url({{ url_for('static', filename='images/' + recipe.category + '.svg')}});">
                         {% endif %}
                     </div>
                     <div class="activator card-content">
@@ -25,7 +27,6 @@
                                 <div title="{{ x }}" class="icon {{ x }} tooltipped" data-position="top" data-tooltip="{{ x }}">{{ initial }}</div>
                             {% endfor %}
                         </div>
-                         
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">close</i></span>
@@ -51,14 +52,6 @@
                     </div>
                 </div>
             </div>
-
             {% endfor %}
         </div>
-    
-      
-  
-    
-        
-    
-
 {% endblock %}

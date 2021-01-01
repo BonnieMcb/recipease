@@ -171,7 +171,7 @@ def my_recipes():
         {"username": session["user"]})["username"]
     my_recipes = mongo.db.recipes.find({"created_by": session["user"]})
 
-    return render_template("my_recipes.html", recipes=my_recipes)
+    return render_template("my_recipes.html", username=username, recipes=my_recipes)
 
 
 @app.route("/logout")
@@ -241,14 +241,22 @@ def edit_recipe(recipes_id):
             allergens=allergens)
 
     else:
-        flash("You can only edit your own recipes")
+        flash("You can only edit your own recipes!")
         return redirect(url_for("my_recipes"))
 
 
 @app.route("/delete_recipe/<recipes_id>")
 def delete_recipe(recipes_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipes_id)})
-    flash("Recipe successfully deleted")
+
+    # from session user, get username from db
+    user = mongo.db.users.find_one({"username": session["user"]})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    if user["username"] == recipe["created_by"]:
+        mongo.db.recipes.remove({"_id": ObjectId(recipes_id)})
+        flash("Recipe successfully deleted")
+    else:
+        flash("You can only delete your own recipes!")
+
     return redirect(url_for("my_recipes"))
 
 

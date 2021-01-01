@@ -73,6 +73,7 @@ h4.page-header {
     line-height: 20px;
     font-size: 12px;
     margin-right: 5px;
+    text-transform: lowercase;
 }
 
 #allergen-key div.single-allergen {
@@ -108,20 +109,6 @@ span.allergen-tick-span {
 
 #clear-filters {
     margin-left: 1em;
-}
-
-.edit-button { 
-    background-color: #26547c;
-}
-
-.delete-button {
-    background-color: #06d6a0;
-}
-
-.top { 
-    position: absolute;                  
-    top: 10px;                          
-    left: 0; 
 }
 
 /*    This flex stuff for the show page is not quite right....
@@ -183,6 +170,26 @@ li.icon, li.footer-socials, li.footer-links {
     width: 100%;
 
     padding: 0;
+}
+
+/* --------------------------- my recipes page ------------------------------ */
+
+#my-recipes .card.small {
+    margin-bottom: 70px;
+}
+
+.edit-button { 
+    background-color: #26547c;
+}
+
+.delete-button {
+    background-color: #06d6a0;
+}
+
+.top { 
+    position: absolute;                  
+    margin-top: 10px;
+    width: 100%;
 }
 
 /* ------------------ list of allergens on show recipe page  ---------------- */
@@ -278,6 +285,10 @@ footer {
     margin-top: 0px;
     margin-bottom: 0px;
     padding-top: 10px;
+}
+
+footer div.row:last-child {
+    margin-bottom: 10px;
 }
 
 /* Ensure filter row is correct size at different breakpoints */
