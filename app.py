@@ -19,10 +19,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-
-
-@app.route("/home")
-def home():
+def index():
     return render_template("index.html")
 
 
