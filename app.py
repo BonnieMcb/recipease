@@ -70,7 +70,7 @@ def recipes_cat(category):
     # check category exists and is valid
     cat = mongo.db.categories.find_one({"category": category})
     if not cat:
-        redirect(url_for("recipes"))
+        return redirect(url_for("recipes"))
 
     filters = get_filters()
     recipes = mongo.db.recipes.find({
@@ -105,6 +105,11 @@ def all_recipes():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+
+    username = session.get("user")
+    if username:
+        return redirect(url_for('index'))
+
     allergens = mongo.db.allergens.find()
     if request.method == "POST":
         # check if username already exists in db
@@ -135,6 +140,11 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+
+    username = session.get("user")
+    if username:
+        return redirect(url_for('index'))
+
     if request.method == "POST":
         # check if user already exists in db
         existing_user = mongo.db.users.find_one(
