@@ -112,6 +112,33 @@ span.allergen-tick-span {
     margin-left: 1em;
 }
 
+.view-button {
+    position: absolute;
+    left: 0;
+    bottom: 2em;
+    width: 100%;
+}
+
+.card-reveal span.card-title {
+    text-transform: capitalize;
+}
+
+.card-reveal i.material-icons {
+    position:   absolute;
+    top: 0.5em;
+    right: 0.5em;
+}
+
+.details hr {
+    margin-bottom: 2em;
+}
+
+.details i {
+    text-align: center;
+    width: 30px;
+    margin-right: 5px;
+}
+
 /*    This flex stuff for the show page is not quite right....
 
 .flex-container{

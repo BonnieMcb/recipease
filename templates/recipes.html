@@ -75,11 +75,17 @@
                     <span class="activator card-title truncate">{{ recipe.recipe_name }}</span>
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">{{ recipe.recipe_name }}<i class="material-icons right">close</i></span>
-                    time: {{ recipe.time }}<br>
-                    serves: {{ recipe.servings }}<br>
-                    by: {{ recipe.created_by }}<br>
-                    <a href="{{ url_for('show_recipe', recipes_id=recipe._id) }}">View recipe</a>
+                    <i class="card-title material-icons right">close</i>
+                    <span class="card-title text-darken-4 truncate">{{ recipe.recipe_name }}</span>
+                    <div class="details">
+                        <div class="right-align">by {{ recipe.created_by }}</div>
+                        <hr>
+                        <div class="center-align"><i class="fas fa-clock"></i>{{ recipe.time }}</div>
+                        <div class="center-align"><i class="fas fa-users"></i>{{ recipe.servings }}</div>
+                    </div>
+                    <div class="view-button center-align">
+                        <a class="waves-effect waves-light btn-small" href="{{ url_for('show_recipe', recipes_id=recipe._id) }}">View Recipe</a>
+                    </div>
                 </div>
             </div>
         </div>
