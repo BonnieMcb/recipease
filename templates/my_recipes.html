@@ -12,9 +12,9 @@
                 <div class="card small activator">
                     <div class="card-image activator">
                         {% if recipe.image %}
-                            <img class="recipe-picture activator" src="{{ recipe.image }}">
+                            <img class="recipe-picture activator" style="background-image: url({{ recipe.image }});">
                         {% else %}
-                            <img class="recipe-picture activator" src="{{ url_for('static', filename='images/breakfast.png') }}">
+                            <img class="recipe-picture activator" style="background-image: url({{ url_for('static', filename='images/' + recipe.category + '.png')}});">
                         {% endif %}
                     </div>
                     <div class="activator card-content">
@@ -22,7 +22,7 @@
                         <div class="activator allergen-icons">
                             {% for x in recipe.allergen_name %}
                             {% set initial = x[0] %}
-                                <div class="icon {{ x }}">{{ initial }}</div>
+                                <div title="{{ x }}" class="icon {{ x }} tooltipped" data-position="top" data-tooltip="{{ x }}">{{ initial }}</div>
                             {% endfor %}
                         </div>
                          

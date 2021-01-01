@@ -7,6 +7,7 @@
     // https://github.com/Dogfalo/materialize/issues/6073
     $('select').formSelect();
     $('.modal').modal();
+    $('.tooltipped').tooltip();
 
     validateMaterializeSelect();
 

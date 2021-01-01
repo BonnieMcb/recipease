@@ -57,7 +57,7 @@
                     <div class="activator allergen-icons">
                         {% for x in recipe.allergen_name %}
                         {% set initial = x[:2] %}
-                            <div title="{{ x }}" class="icon {{ x }}">{{ initial }}</div>
+                            <div title="{{ x }}" class="icon {{ x }} tooltipped" data-position="top" data-tooltip="{{ x }}">{{ initial }}</div>
                         {% endfor %}
                     </div>
                     <span class="activator card-title truncate">{{ recipe.recipe_name }}</span>
