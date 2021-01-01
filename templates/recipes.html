@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block header %}
-<h4 class=" page-header center-align">{{ category.category }}</h4>
+{% if category %}
+<h4 class="page-header center-align">{{ category.category }}</h4>
+{% else %}
+<h4 class="page-header center-align">All Recipes</h4>
+{% endif %}
 {% endblock%}
 
 {% block content %}

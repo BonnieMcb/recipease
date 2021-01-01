@@ -8,7 +8,11 @@
 
     <div class="section">
         <div class="row flex-container space-between">
-            <img class="col s8" src="{{ recipes.image }}">
+            {% if recipes.image %}
+                <img class="col s8" src="{{ recipes.image }}">
+            {% else %}
+                <img class="col s8" src="{{ url_for('static', filename='images/' + recipes.category + '.svg') }}">
+            {% endif %}
             <div class="col s4">
                 <div class="row">
                     <div>Added by:</div>
