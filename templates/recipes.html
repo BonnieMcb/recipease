@@ -62,7 +62,7 @@
                     {% if recipe.image %}
                     <img class="recipe-picture activator" style="background-image: url({{ recipe.image }});">
                     {% else %}
-                    <img class="recipe-picture activator" style="background-image: url({{ url_for('static', filename='images/' + recipe.category + '.png')}});">
+                    <img class="recipe-picture recipe-picture-svg activator" style="background-image: url({{ url_for('static', filename='images/' + recipe.category + '.svg')}});">
                     {% endif %}
                 </div>
                 <div class="activator card-content">
