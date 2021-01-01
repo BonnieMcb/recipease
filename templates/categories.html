@@ -7,25 +7,29 @@
 
 {% block content %}
 
-<div>
+<div class="row">
     <a href="{{ url_for('all_recipes') }}">
-        <div class="card small">
-            <div class="card-image">
-                <img src="{{ url_for('static', filename='images/all_recipes.png' ) }}">
-            </div>
-            <div class="card-content">
-                <div>Show All Recipes</div>
+        <div class="col s6 m3" >
+            <div class="card small">
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/all_recipes.png' ) }}">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Show All Recipes</div>
+                </div>
             </div>
         </div>
     </a>
     {% for x in categories %}
         <a href="{{ url_for('recipes_cat', category=x.category) }}">
-            <div class="card small">
-                <div class="card-image">
-                    <img src="{{ url_for('static', filename='images/' + x.category + '.png' ) }}">
-                </div>
-                <div class="card-content">
-                    <div>{{ x.category }}</div>
+            <div class="col s6 m3" >
+                <div class="card small">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/' + x.category + '.png' ) }}">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">{{ x.category }}</div>
+                    </div>
                 </div>
             </div>
         </a>
