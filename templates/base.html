@@ -92,9 +92,6 @@
                             <li class="footer-links"><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                          {% endif %}
                     <li class="footer-links"><a href="{{ url_for('home') }}">Home</a></li>
-                        {% if session.user %}
-                        <li class="footer-links"><a href="{{ url_for('favourites', username=session['user']) }}">Favourites</a></li>
-                        {% endif %}
                     <li class="footer-links"><a href="#">Shop</a></li>
                 </ul>
             </div>

@@ -131,7 +131,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successfull")
-        return redirect(url_for("favourites", username=session["user"]))
+        return redirect(url_for("recipes", username=session["user"]))
 
     return render_template("register.html", allergens=allergens)
 
@@ -150,7 +150,7 @@ def login():
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
                     return redirect(url_for(
-                        "favourites", username=session["user"]))
+                        "recipes"))
             else:
                 # invalid password match
                 flash("Incorrect username or password")
@@ -162,18 +162,6 @@ def login():
             return redirect(url_for('login'))
 
     return render_template("login.html")
-
-
-@app.route("/favourites", methods=["GET", "POST"])
-def favourites():
-    # from session user, get username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template("favourites.html", username=username)
-
-    return redirect(url_for("login"))
 
 
 @app.route("/my_recipes")
