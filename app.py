@@ -84,7 +84,8 @@ def recipes_cat(category):
     return render_template(
         "recipes.html", recipes=recipes, allergens=allergens,
         filters=filters.url, user_allergens=filters.user,
-        safe_search=safe_search, username=username)
+        safe_search=safe_search, username=username,
+        category=cat)
 
 
 @app.route("/recipes/all")
