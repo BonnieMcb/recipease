@@ -63,15 +63,16 @@
 {% block header %}
 {% endblock%}
 
-<section class="flashes"> <!-- flash messages -->
+
 {% with messages = get_flashed_messages() %}
     {% if messages %}
+    <section class="flashes"> <!-- flash messages -->
         {% for message in messages %}
             <h4 class="light-green center-align">{{ message }}</h4>
         {% endfor %}
+    </section>
     {% endif %}
 {% endwith%}
-</section>
 
 
 <main class="container">
