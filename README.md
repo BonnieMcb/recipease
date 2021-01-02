@@ -4,7 +4,7 @@
 
 This website is created for educational purposes only.
 
-[Responsive](...)    
+![Responsive](/documents/responsive.PNG)    
     
 The brief for this third Milestone project was to build a full-stack site that allows users to manage a common dataset about a particular domain. It is the third of four projects as part of the Full Stack Web Development Program at The Code Institute. 
 
@@ -32,39 +32,22 @@ The Recipease website is a web application where users are able to add and store
 The user stories below are structured so that the various user stories are the numbered bullet points, and the solutions/features required to satisfy these needs are the lettered bullet points.
 
 1. I heard of this website via word of mouth and want to see what it’s about.
-    * a. An enticing home page concisely detailing the aims of this website.
 2. I would like to find a recipe for dinner tonight. I am allergic to some things. 
-    * a. See a list of all recipes on the database.
-    * b. Filter the recipes by both allergens (multiple selection available) and dish category.
-    * c. View the details of the recipes in an uncluttered easy to read page.
 3. I am looking for a one stop place to add, edit and view my own recipes.
-    * a. Add a recipe (registered user only).
-    * b. Edit recipes that they have added (registered user only).
-    * c. View a list of recipes they have added (registered user only).
 4. I want to view recipes and know that I will never see recipes with my allergens in them. Sometimes I might want to see all recipes though, so I can adapt them myself.
-    * a. Registered users who have clicked on their allergens when registering will not see recipes containing those allergens.
-    * b. Registered users can toggle a switch to switch between being shown recipes with their allergens in, or without.
 5. I am throwing a dinner party and my friends have an assorted collection of allergies. I want to find a recipe for every course to satisfy all their requirements.
-    * a. Filter the recipes by both allergens (multiple selection available) and dish category.
 6. I like to easily share recipes with people. 
-    * a. Share a recipe button that upon hovering or clicking links to a number of social media.
 7. As a registered user, I would like to easily be able to favourite recipes and navigate to my favourites easily. 
-    * a. A Floating Action button on each recipe card adds the recipe to the user's Favourite Recipes page.
 
 ### Site owner goals:
 1. I want to create a customer base to target with occasional direct marketing and special offers. (If not necessarily by DM via email, then by showing special offers only to logged in users.
-    * a. Provide special features to registered users only.
 2. I want to promote certain cooking tools / recipe books via my website.
-    * a. Shop page.
 
 #### Stretch Goals
-With time and resources allowing, other goals are to:
-- Favourites
-- Shop Page
-- Share button
-
-#### Future ideas for new features
-- ???????????????????????????????????
+With time and resources allowing, other goals are to implement:
+- Favourites. - Floating action buttons on the recipe cards and recipe that when clicked add to a FAVOURITES page.
+- Shop Page - A business goal as a way of monetizing the site.
+- Share button - This would be a button on the recipe page that linked to various social media
 
 ### Design
 
@@ -156,18 +139,16 @@ The four collections contained simple objects. The recipes object holds more dat
 - The EDIT RECIPE page is identical to the ADD RECIPE one, but has all the information pre-selected and filled in.
 - The ADD/EDIT pages are layed out in a similar structure as the Recipe page, with widely spaced out sections for the vital information, and then the sections to fill in ingredients and methods at the bottom of the screen. 
 - At the bottom there are buttons to ADD/EDIT or CANCEL. 
-..................... - In terms of input fields ................................................
-regex etc....
+- Input field validation:
+    - Image field has url validator that validates if it is a url, but does not validate if it is active
+    - 
 
 ##### Account
 
 - In order to unclutter the nav bar, the navigation links to pages related to a user's account were consolidated into an expandable ACCOUNT button, containing the options to LOG IN and REGISTER.
-..........................describe verification and regex etc....
+- For the username registration, min- and max-lentgh attributes are used, as well as a pattern attribute in order to ensure that users only use alphanumeric characters.
 
 
-...................#### Features To Be Implemented
-
-....................- 
 
 
 ## Technology
