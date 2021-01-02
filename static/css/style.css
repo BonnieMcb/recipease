@@ -40,7 +40,7 @@ div.nav-wrapper {
     background-color: #ef476f;
 }
 
-h4 {
+h4.page-header, .flashes h4 {
     background-color: #ffd166;
     text-transform: uppercase;
     margin-top: 0;
@@ -75,6 +75,23 @@ h4 {
 
 #content-row.filter-margin-top {
     margin-top: 260px;
+}
+
+.container .waves-effect {
+    background: #26547C;
+    color: #FFF;
+}
+
+.container .waves-effect:hover {
+    background: #06D6A0;
+}
+
+.container .switch label input[type=checkbox]:checked+.lever {
+    background-color: #A7DED0;
+}
+
+.container .switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #06D6A0;
 }
 
 /* --------------------- allergen key ----------------------- */
@@ -225,14 +242,6 @@ li.icon, li.footer-socials, li.footer-links {
 
 #my-recipes .card.small {
     margin-bottom: 70px;
-}
-
-.edit-button { 
-    background-color: #26547c;
-}
-
-.delete-button {
-    background-color: #06d6a0;
 }
 
 .top { 
