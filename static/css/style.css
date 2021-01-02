@@ -12,7 +12,26 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
-a.brand-logo {
+#hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero-logo {
+    font-size: 8vw;
+    line-height: 2em;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
+
+#hero-image {
+    width: 100%;
+}
+
+.brand-logo {
     font-family: 'Pacifico', cursive;
     margin-left: 0.5em;
 }

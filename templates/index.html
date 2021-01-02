@@ -2,12 +2,13 @@
 
 
 {% block header %}
-<h4 class=" page-header center-align">Home</h4>
+<div id="hero-container">
+    <div id="hero-logo" class="brand-logo">Recipease</div>
+    <img id="hero-image" src="{{ url_for('static', filename='images/rainbow-food.png') }}">
+</div>
 {% endblock%}
 
 {% block content %}
-    
-
     <div>
         <div>
             Welcome to Recipease, your friendly neighbourhood recipe website with a focus on allergen-free tasty meals and treats.
