@@ -12,7 +12,7 @@
         <div class="col s12" >
             <div class="card small">
                 <div class="card-image">
-                    <img class="recipe-picture recipe-picture-svg" style="background-image: url({{ url_for('static', filename='images/all_recipes.svg') }});">
+                    <div class="recipe-picture recipe-picture-svg" style="background-image: url({{ url_for('static', filename='images/all_recipes.svg') }});"></div>
                 </div>
                 <div class="card-content">
                     <div class="card-title">All Recipes</div>
@@ -25,7 +25,7 @@
             <div class="col s6 m3" >
                 <div class="card small">
                     <div class="card-image">
-                        <img class="recipe-picture recipe-picture-svg" style="background-image: url({{ url_for('static', filename='images/' + x.category + '.svg')}});">
+                        <div class="recipe-picture recipe-picture-svg" style="background-image: url({{ url_for('static', filename='images/' + x.category + '.svg')}});"></div>
                     </div>
                     <div class="card-content">
                         <div class="card-title">{{ x.category }}</div>

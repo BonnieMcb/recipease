@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
-
 {% block header %}
 <div id="hero-container">
     <div id="hero-logo" class="brand-logo">Recipease</div>
-    <img id="hero-image" src="{{ url_for('static', filename='images/rainbow-food.png') }}">
+    <img id="hero-image" src="{{ url_for('static', filename='images/rainbow-food.png') }}" alt="Rainbow Food hero image">
 </div>
 {% endblock%}
 
@@ -36,7 +35,4 @@
         </div>
     </div>
     
-    
-
 {% endblock %}
-

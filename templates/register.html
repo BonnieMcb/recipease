@@ -31,7 +31,7 @@
                 </div>
                 <!-- allergens -->
                 <div class="input-field col s12">
-                    <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate">
+                    <select multiple id="allergen_name" name="allergen_name" class="validate">
                         <option value="" disabled>Select allergen(s)</option>
                         {% for allergen in allergens %}
                             {% set lowername = ''.join(allergen.name.split()).lower() %}

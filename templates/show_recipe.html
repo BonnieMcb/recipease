@@ -9,9 +9,9 @@
     <div class="section">
         <div class="row flex-container space-between">
             {% if recipes.image %}
-                <img class="col s8" src="{{ recipes.image }}">
+                <img class="col s8" src="{{ recipes.image }}" alt="{{ recipes.recipe_name }}">
             {% else %}
-                <img class="col s8" src="{{ url_for('static', filename='images/' + recipes.category + '.svg') }}">
+                <img class="col s8" src="{{ url_for('static', filename='images/' + recipes.category + '.svg') }}" alt="{{ recipes.recipe_name }}">
             {% endif %}
             <div class="col s4">
                 <div class="row">

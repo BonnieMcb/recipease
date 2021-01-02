@@ -27,7 +27,7 @@
                 </label>
             </div>
             {% endif %}
-            <select multiple id="allergen_name" name="allergen_name" type="checkbox" class="validate">
+            <select multiple id="allergen_name" name="allergen_name" class="validate">
                 <option value="" disabled>Select allergens to exclude</option>
                 {% for allergen in allergens %}
                     {% set lowername = ''.join(allergen.name.split()).lower() %}
@@ -64,9 +64,9 @@
             <div class="card small activator">
                 <div class="activator card-image">
                     {% if recipe.image %}
-                    <img class="recipe-picture activator" style="background-image: url({{ recipe.image }});">
+                    <div class="recipe-picture activator" style="background-image: url({{ recipe.image }});"></div>
                     {% else %}
-                    <img class="recipe-picture recipe-picture-svg activator" style="background-image: url({{ url_for('static', filename='images/' + recipe.category + '.svg')}});">
+                    <div class="recipe-picture recipe-picture-svg activator" style="background-image: url({{ url_for('static', filename='images/' + recipe.category + '.svg')}});"></div>
                     {% endif %}
                 </div>
                 <div class="activator card-content">
