@@ -213,44 +213,7 @@ regex etc....
 
 ## Testing
 
-The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there was no invalid HTML or CSS.
-
--   [W3C Markup Validator](https://validator.w3.org/) Fully passed, no errors or warnings
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) My CSS has no errors or warnings, but Bootstrap CSS intentionally does.
-
-### Testing User Stories
-
-#### 1. As a potential customer, I want to see services on offer and get a feel for the company.
-- The user is presented with a high-contrast, easily-readable navigation bar with links to other pages on the site. 
-- The eye is also drawn down to the hero image, with contrasting text clarifying what the company provides in just a few words.
-- The user can then scroll down to read more about the company, with “What we do” visible in tablet and mobile to invite scrolling. 
-- A ‘Back to top’ button is provided on all pages once the user scrolls a certain amount, and the nav bar is stuck to the top of the screen as you scroll, so the user never gets stuck at the bottom of a page with nowhere to go.
-#### 2. As a potential customer who has had a bad experience at a competitor, I want to know who the groomers are and if they are reliable.
-- A description of the team and their qualifications is provided on the home page, immediately followed by testimonials and links to social media for further investigation of the company’s reputation.
-#### 3. As a potential user, I browse websites on my mobile phone and want to have a good experience and be able to find and view the information I want.
-- The website is responsive on smaller screens with the result being an aesthetically-pleasing and functional site on all screen sizes.
-#### 4. As a potential customer I want to know if this place is easy to get to.
-- In addition to the address and contact information in the footer, there is also a page with an embedded google map, and parking/public transport information.
-#### 5. As a potential customer I want to know what other people say about this business.
-Testimonials are found on the home page, and the links to social media are visible on the high-contrast footer on every page.
-#### 6. As a returning or potential customer I want to be reminded of the services available and be able to make a booking easily.
-- The services are laid out in a clear and clean manner, with a text description, as well as pictograms to provide information at a glance. A ‘Book Now’ button under every different service links to the Bookings page.
-- The Bookings page has a short form with required fields, as well as the phone number at the top of the page for those who prefer to call.
-- The contact information for phone and email are also provided in the footer on every page.
-
-
-### Further Testing
-
--   The website was tested on Google Chrome, Mozilla Firefox and Microsoft Edge browsers.
--   The website was viewed, using Chrome Developer Tools, on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
--   A large amount of testing was done to ensure that all pages were linking correctly.
--   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
-
-### Known Bugs
-
-
-
-
+see seperate testing.md file
 
 
 Deployment to Heroku
