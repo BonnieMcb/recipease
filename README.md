@@ -10,8 +10,8 @@ The brief for this third Milestone project was to build a full-stack site that a
 
 ## Table of Contents
 1. [**Project overview**](#project-overview)
-2. [**UX (User Experience**](#ux-(user-experience))
-3. [**Project overview**](#project-overview)
+2. [**UX (User Experience)**](#ux-(user-experience))
+3. [**User Stories and Features**](#project-overview)
 4. [**Project overview**](#project-overview)
 
 
@@ -57,7 +57,6 @@ The user stories below are structured so that the various user stories are the n
 2. I want to promote certain cooking tools / recipe books via my website.
     * a. Shop page.
 
-
 #### Stretch Goals
 With time and resources allowing, other goals are to:
 - Favourites
@@ -69,40 +68,46 @@ With time and resources allowing, other goals are to:
 
 ### Design
 
-The [Materialize library](https://materializecss.com/) was used throughout in order to maintain a consistent and clean-looking site throughout the pages. I looked at various other recipe websites for inspiration and decided on small recipe cards on the recipes page. The recipe page itself (where ingredients and method is detailed) was inspired by the [BBC Food website](https://www.bbc.co.uk/food), as I liked their simple design and I like to see the ingredients and method at the same time. 
+The [Materialize library](https://materializecss.com/) was used throughout in order to maintain a consistent and clean-looking site throughout the pages. This also had the benefit of allowing me to primarily focus in the back-end building. 
 
-...????......
+I looked at various other recipe websites for inspiration and decided on a page displaying small recipe cards that the user can scroll through as this is a standard format that looks good and is mobile-friendly. The recipe page itself (where ingredients and method is detailed) was inspired by the [BBC Food website](https://www.bbc.co.uk/food), as I liked their simple design, and I like to see the ingredients and method at the same time. Initially I had envisaged only having the ingredient and method sections stacked on top of each other instead of side by side on mobile, but when I started top put real recipes in instead of test ones, I realised that it was cluttered and not easiyl readable, so I changed to displaying the method secion underneath the ingredients at all times.
 
-If no image is uploaded by the user, a icon image is displayed based on the category of the dish, so there is an icon with croissant for the breakfast category, an icon with a hotdog for the snack category and so on.
+If no recipe image is uploaded by the user, an icon image is displayed based on the category of the dish, so there is an icon with croissant for the breakfast category, an icon with a hotdog for the snack category and so on.
 
-#### Colour Palette
-
-Colours:
-Allergens on for example restaurant menus, are often marked in different colours, [for example](https://www.dickinson.edu/images/Menu_Picture_for_Website.jpeg) This is something that people with allergies are used to seeing, and I wanted to keep this for my website. Since my last two projects used fairly muted colours and I wanted to be a bit more playful with bolder colours this time. 
-
-
- [coolors](https://coolors.co/u/bonnie_mcbride)
-
-- ![#051f20](https://placehold.it/15/051f20/000000?text=+) #051f20 'Swamp'
-
-
-#### Typography
-
-I used [Google fonts](https://fonts.google.com/) to embed fonts into my site by copying the code into the <head> of my html. 
-I chose what I belevie to be a casual but stylish font for the logo, which is displayed on all pages on the nav bar, and on the home page. This is the Pacifico font. I chose the easy to read Open Sans font throughout the site, which was complementary to the font I used for the name of the website. 
-
-#### Imagery
-
-Initially I had used black and white icons for the category pictures. Later on in the project, I came across the [flaticon website](http://www.flaticon.com) that provides coloured icons for free, and swapped to these as they match the rest of the site better and pull the whole thing together.
+Some other things that changed from initial design during the development were the way to filter allergens, and the toggle for hiding a registered user's allergens. 
+As can be seen in the wireframe for the recipe page, I had initially designed a grid of allergens to filter. The idea was that they are greyed out, but change to a colour when clicked on to filter them out. These colours would of course correspond to the same allergens on the recipe card and recipe page. However, when I started using Materialize, I realised the dropdown select menu will be more familiar to users. I changed to this design rather than my novel design, as the website’s mission after all, is to make users feel at ease.
+I had also designed it as such that a logged in user would never be presented with recipes containing their allergens, again with the aim of making them feel more at ease. Although users may feel more comfortable never seeing dishes with their allergens in, it felt wrong to take away that option of choice so I implemented the toggle switch.
 
 #### Wireframes
 
 I used Figma to put together some wireframes for the most important pages when designing the project and these were used as a guide rather than an exact template. Since I was using Materialize for efficiency, consistency and responsiveness, I left some of the design decisions with them, such as the log in and register pages. For these, I did some minor styling to match it to the rest of the site.
 
-[Home](/documents/wireframes/wf_home_page.png) 
-[Recipes](/documents/wireframes/wf_recipes_page.png) 
-[Add Recipe](/documents/wireframes/wf_add_recipe.png) 
-[Recipe Description](/documents/wireframes/wf_recipe_descr.png) 
+* [Home](/documents/wireframes/wf_home_page.png) 
+* [Recipes](/documents/wireframes/wf_recipes_page.png) 
+* [Add Recipe](/documents/wireframes/wf_add_recipe.png) 
+* [Recipe Description](/documents/wireframes/wf_recipe_descr.png) 
+
+#### Colour Palette
+
+Allergens on for example restaurant menus, are often marked in different colours, [for example](https://www.dickinson.edu/images/Menu_Picture_for_Website.jpeg) This is something that people with allergies are used to seeing, and I wanted to keep this for my website. Since my last two projects used fairly muted colours I also wanted to be a bit more playful with bolder colours this time. 
+
+I used the [coolors](https://coolors.co) website to help me choose complementary colours and choose the below scheme which made me think of summery surfy vibes. Perfect for a website which aims to make the users feel happy and comfortable. 
+
+![..](documents/Recipease.png)
+
+#### Typography
+
+I used [Google fonts](https://fonts.google.com/) to embed fonts into my site by copying the code into the <head> of my html. 
+I chose what I believe to be a casual but stylish font for the logo, which is displayed on all pages on the nav bar, and on the home page. This is the Pacifico font, which is in keeping with the colour scheme. I chose the easy to read Open Sans font throughout the site, which was complementary to the font I used for the name of the website. 
+
+#### Imagery
+
+Initially I had used black and white icons for the category pictures. Later on in the project, I came across the [flaticon website](http://www.flaticon.com) that provides coloured icons for free, and swapped to these as they match the rest of the site better and pull the whole thing together.
+
+#### Database 
+
+
+
 
 ### Features
 
