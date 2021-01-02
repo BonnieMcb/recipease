@@ -358,3 +358,13 @@ footer div.row:last-child {
 
 }
 
+@media only screen and (max-width: 601px) {
+
+#home-content .col {
+    float: none;
+    width: 100%;
+}
+
+}
+
+
