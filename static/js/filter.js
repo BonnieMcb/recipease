@@ -49,4 +49,4 @@ $(document).ready(function(){
             $('#safe-search-form').submit();
         }
     });
-})
+});
