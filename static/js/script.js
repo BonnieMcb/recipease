@@ -1,7 +1,9 @@
   $(document).ready(function(){
 
     $('.sidenav').sidenav();
-    $(".dropdown-trigger").dropdown();
+    $(".dropdown-trigger").dropdown({
+        "coverTrigger": false
+    });
 
     // select must come after dropdown, due to this bug in materialize:
     // https://github.com/Dogfalo/materialize/issues/6073
