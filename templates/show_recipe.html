@@ -43,7 +43,7 @@
             <h5>Ingredients</h5>
             <ul>
             {% for ingredient in ingredients %}
-                <li><span>{{ ingredient.strip().capitalize() }}</span></li>
+                <li><span class="truncate">{{ ingredient.strip().capitalize() }}</span></li>
             {% endfor %}
             </ul>
         </div>
@@ -54,7 +54,7 @@
             <h5>Method</h5>
             <ol>
             {% for method in methods %}
-                <li><span>{{ method.strip().capitalize() }}</span></li>
+                <li><span class="truncate">{{ method.strip().capitalize() }}</span></li>
             {% endfor %}
             </ol>
         </div>

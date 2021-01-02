@@ -29,12 +29,12 @@
             <!-- Servings and time -->
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="servings" name="servings" type="text" class="validate">
-                    <label for="servings">Servings</label>
+                    <input id="servings" name="servings" type="text" pattern="[\d]+" maxlength="5" class="validate">
+                    <label for="servings">Servings (number)</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="time" name="time" type="text" class="validate">
-                    <label for="time">Time</label>
+                    <input id="time" name="time" type="text" pattern="[\d]+" maxlength="5" class="validate">
+                    <label for="time">Time (in minutes)</label>
                 </div>
             </div>
             <!-- Allergens -->
