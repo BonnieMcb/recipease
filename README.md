@@ -97,10 +97,12 @@ Initially I had used black and white icons for the category pictures. Later on i
 
 #### Wireframes
 
-I used Figma to put together some wireframes for the most important pages when designing the project and these were used as a guide rather than an exact template. Since I was using Materialize for efficiency, consistency and responsiveness, I left some of the design decisions with them, such as the log in and register pages. 
+I used Figma to put together some wireframes for the most important pages when designing the project and these were used as a guide rather than an exact template. Since I was using Materialize for efficiency, consistency and responsiveness, I left some of the design decisions with them, such as the log in and register pages. For these, I did some minor styling to match it to the rest of the site.
 
-![Wireframes](/assets/images/wireframes.png) 
-
+[Home](/documents/wireframes/wf_home_page.png) 
+[Recipes](/documents/wireframes/wf_recipes_page.png) 
+[Add Recipe](/documents/wireframes/wf_add_recipe.png) 
+[Recipe Description](/documents/wireframes/wf_recipe_descr.png) 
 
 ### Features
 
