@@ -140,16 +140,14 @@ The four collections contained simple objects. The recipes object holds more dat
 - The ADD/EDIT pages are layed out in a similar structure as the Recipe page, with widely spaced out sections for the vital information, and then the sections to fill in ingredients and methods at the bottom of the screen. 
 - At the bottom there are buttons to ADD/EDIT or CANCEL. 
 - Input field validation:
+    - Appropriate maxlength attributes in html for input fields.
+    - Appropriate RegEx so only numeric characters can be input for 'servings' and 'time' fields.
     - Image field has url validator that validates if it is a url, but does not validate if it is active
-    - 
 
 ##### Account
 
 - In order to unclutter the nav bar, the navigation links to pages related to a user's account were consolidated into an expandable ACCOUNT button, containing the options to LOG IN and REGISTER.
-- For the username registration, min- and max-lentgh attributes are used, as well as a pattern attribute in order to ensure that users only use alphanumeric characters.
-
-
-
+- For the username registration, min- and max-length attributes are used, as well as a pattern attribute in order to ensure that users only use alphanumeric characters.
 
 ## Technology
 
@@ -197,7 +195,9 @@ The four collections contained simple objects. The recipes object holds more dat
 see seperate testing.md file
 
 
-Deployment to Heroku
+## Deployment and Cloning Repo
+
+### Deployment to Heroku
 
 1. Before deploying to Heroku, some files need to be set up within the IDE, Gitpod in this case.
 2. The requirements.txt file, and the Procfile can be created within the terminal by typing `<pip3 freeze > requirements.txt>` and `<echo web: python app.py > Procfile>`, respectively, making sure to delete any blank lines that sometimes get created. 
@@ -208,7 +208,7 @@ Deployment to Heroku
 7. Next, go to Settings > Config Vars > Reveal Config Vars and set up the variables for the IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME. 
 8. In the Deploy tab, turn on Automatic Deployment, and then click Deploy Branch to deploy the master and allow Heroku to build the app. Once complete, clicking View App will open it.
 
-Cloning this repo
+### Cloning this repo
 
 1. At the top of this repository, click Clone or download.
 2. In the Clone with HTTPs dropdown, copy the clone URL for the repository.
@@ -220,38 +220,18 @@ Cloning this repo
 
 
 
+## Credits
 
 
 
 
 
 
-08/12/20 Gitpod was having some outage issues, also noted by CI. Seems one of my pushes did not go through.
-
-TODO:
-Figure out checkboxes on Add recipe
-
-nice TODO:
-only show favourite buttons when logged in OR 
-    flash message/tooltip(Materialize) that one must be logged in to save to favourites
-
-testing while coding for example:
-flash("Permission to edit")
-write about user provided input validation / access permissions etc
-
-
-attributes:
+attributions:
     for add recipe tickboxes
     https://stackoverflow.com/questions/5799090/remove-whitespace-and-make-all-lowercase-in-a-string-for-python
 
     for m=Materialize dropdown validation workaround
     jquery code copied from Code Institute lesson Course  Mini Project | Putting It All Together  Adding A Task - Writing to the Database  Materialize Form Validation
 
-Breakfast by Edward Boatman from the Noun Project
-Cake by starwin from the Noun Project
-Dessert by Handicon from the Noun Project
-dinner by Adrien Coquet from the Noun Project
-Salad by Normansyah from the Noun Project
-Fruit by Lnhi from the Noun Project
-snack by Alan Davis from the Noun Project
-Soup by Aneeque Ahmed from the Noun Project
+
