@@ -27,7 +27,7 @@ Recipease was built using [Python](https://www.python.org/), [Flask](https://fla
 The Recipease website is a web application where users are able to add and store their own recipes, as well as view recipes added by others. It is designed with users in mind who have multiple allergens in their family or friend circle. 
 
 
-### User Stories and Features
+### User Stories
 
 The user stories below are structured so that the various user stories are the numbered bullet points, and the solutions/features required to satisfy these needs are the lettered bullet points.
 
@@ -106,7 +106,14 @@ Initially I had used black and white icons for the category pictures. Later on i
 
 #### Database 
 
+There were no specific relationships that need to be maintained between any of the aspects of the database components so a non-relational database is used. MongoDB is a popular, multipurpose and cloud-based database system that is easy to use with Flask and Python. 
 
+The documents in the database do relate to each other in some ways however, and a simplified diagram of the schema is visible below. 
+
+![Simplified data schema](/documents/Recipease diagram.jpeg)
+
+The four collections contained simple objects. The recipes object holds more data than the others, however, including an array for the allergens.
+![Recipe object](/documents/Recipe Object.PNG)
 
 
 ### Features
@@ -116,59 +123,54 @@ Initially I had used black and white icons for the category pictures. Later on i
 ##### Consistent Features across all pages
 
 - Always-visible navigation bar with the *Recipease* logo on the left (linking to index.html) and links to the sub-pages on the right. 
-................... - Navigation bar changes to a hamburger button on small screens.
+- On small screens the navigation bar changes to a hamburger button which brings up a left-hand navigation menu when clicked.
+- A Profile dropdown in the navbar where unlogged users can login/register, and logged in users can navigate to registered-only features.
 - Sticky footer with links to social media.
-...................- A 'Back to Top' button that pops up on all pages once the user has scrolled more than 100px.
 
 ##### Home
 
 - A simple but bright home page detailing briefly what the site is intended to do.
 - Three sections advertising its main and differentiating features, with the intent to entice the user to continue on to use the features of the site.
 
-"Feel at ease at Recipease that if you want to, you will never see recipes with your allergens in them."
-
 ##### Recipes
 
-- The user is presented with an uncluttered page with small recipe cards (4 on large screens, 2 on small screens) which are all the same size with the same size pictures. Only picture, name and allergens are shown at first.
+- The user is presented with an uncluttered page with eight small cards for the different categories, as well as a larger one at the top for all recipes.
+- Upon clicking any of these cards, the user is taken through to a new page showing only recipe cards in that category. These are all the same size with the same size pictures. Four per row on large screens, two on small screens.  Only picture, name and allergens are shown at first.
 - Upon clicking a card, more information relating to the recipe is shown, and with another click, the user is taken to the recipe page.
-- If the user has linked to a picture when they added the recipe, this will be displayed on the card. If not, a black and white icon will be displayed that relates to the type of dish (cake, dinner, soup etc.).
-- At the top of the page are two dropdown filters. The allergen filter has multiple selection options, the category dropdown only one. There are apply filter and clear filter buttons. 
+- If the user has linked to a picture when they added the recipe, this will be displayed on the card. If not, a default icon will be displayed that relates to the type of dish (cake, dinner, soup etc.).
+- At the top of the page there is the multiple selection dropdown filter to exclude allergens. There are apply filter and clear filter buttons and a key that details the allergens as displayed on the recipe cards.
+- Any allergens are displayed on the bottom of the card in a grid and are represented by a two-letter abreviation and a colour. A hover-over also shows the full allergen name.
 
 ##### Recipe page
 
-- Information about the recipe is featured at the tope of the page, widely spaced and easy to scan. The allergens are displayed with the same colours as on the recipe cards.
-- Ingredients and method are divided into two columns that are next to each other on large screens and stack on top of each other on smaller screens.
-....... - Picture at bottom????
-
-##### Shop 
-
-- ??
+- A picture (user-uploaded or default) is shown at the top of the page, with the vital information about the recipe is to the right of the picture, widely spaced and easy to scan. The allergens are displayed with the same colours as on the recipe cards.
+- Ingredients and method are divided into two columns that stacked on top of each other on all screens.
 
 ##### My Recipes
 
 - The user is presented with identical recipe cards as on the RECIPES page, but only the ones that they have added themselves.
-- On the cards there are EDIT and DELETE buttons. Clicking on DELETE will bring up a modal that asks the user if they definitely want to delete the recipe, or cancel the deletion. Clicking EDIT will redirect to the EDIT RECIPE page (see below).
+- Below the cards there are EDIT and DELETE buttons. Clicking on DELETE will bring up a modal that asks the user if they definitely want to delete the recipe, or cancel the deletion. Clicking EDIT will redirect to the EDIT RECIPE page (see below).
 
 ##### Add Recipe / Edit Recipe
 
 - The EDIT RECIPE page is identical to the ADD RECIPE one, but has all the information pre-selected and filled in.
 - The ADD/EDIT pages are layed out in a similar structure as the Recipe page, with widely spaced out sections for the vital information, and then the sections to fill in ingredients and methods at the bottom of the screen. 
 - At the bottom there are buttons to ADD/EDIT or CANCEL. 
-- In terms of input fields ................................................
+..................... - In terms of input fields ................................................
 regex etc....
 
 ##### Account
 
 - In order to unclutter the nav bar, the navigation links to pages related to a user's account were consolidated into an expandable ACCOUNT button, containing the options to LOG IN and REGISTER.
-describe verification and regex etc....
+..........................describe verification and regex etc....
 
 
-#### Features To Be Implemented
+...................#### Features To Be Implemented
 
-- 
+....................- 
 
 
-## Technologies Used
+## Technology
 
 #### Languages Used
 - HTML5
@@ -206,7 +208,6 @@ describe verification and regex etc....
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 14. [Figma](https://www.figma.com/) 
     - Figma was used to create wireframes and aid design and layout decisions.
-
 
 
 
