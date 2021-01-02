@@ -8,7 +8,12 @@
     
         <div id="my-recipes" class="row">
             <h4>Hi {{ username }}!</h4>
+            {% if recipes.count() > 0 %}
             <h5>Here are your recipes:</h5>
+            {% else %}
+            <h5>Looks like you don't have any recipes yet.</h5>
+            <p>Try adding one on the <a href="{{ url_for('add_recipe') }}">Add Recipe</a> page!</p>
+            {% endif %}
             {% for recipe in recipes %}
             <div class="col s6 m3">
                 <div class="card small activator">

@@ -365,6 +365,8 @@ footer div.row:last-child {
     max-width: 1280px;
 }
 
+
+
 }
 
 @media only screen and (max-width: 601px) {
@@ -377,3 +379,10 @@ footer div.row:last-child {
 }
 
 
+@media only screen and (max-width: 993px) {
+
+#allergen-key {
+    grid-template-columns: repeat(4, 4fr);
+}
+
+}
