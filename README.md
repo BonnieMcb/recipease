@@ -244,7 +244,7 @@ My Mentor Can Sücüllü for insightful and thoughtful feedback and testing guid
 
 My partner Ben for invaluable feedback and endless cups of tea.
 
-The Coronavirus for allowing me the oppertunity to work under extremely difficult conditions, locked in a tiny appartment during the Christmas holidays with two wild toddlers.
+The Coronavirus for allowing me the opportunity to work under extremely difficult conditions, locked in a tiny appartment during the Christmas holidays with two wild toddlers.
 
 
 
