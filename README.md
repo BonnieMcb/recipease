@@ -10,9 +10,13 @@ The brief for this third Milestone project was to build a full-stack site that a
 
 ## Table of Contents
 1. [**Project overview**](#project-overview)
-2. [**UX (User Experience)**](#ux-(user-experience))
-3. [**User Stories and Features**](#project-overview)
-4. [**Project overview**](#project-overview)
+2. [**UX**](#ux)
+3. [**User Stories**](#user-stories)
+4. [**Features**](#features)
+5. [**Technology**](#technology)
+6. [**Testing**](#testing)
+7. [**Deployment and Cloning Repo**](#deployment-and-cloning-repo)
+8. [**Credits**](#credits)
 
 
 ## Project Overview
@@ -26,18 +30,13 @@ Recipease was built using [Python](https://www.python.org/), [Flask](https://fla
 ### Goals
 The Recipease website is a web application where users are able to add and store their own recipes, as well as view recipes added by others. It is designed with users in mind who have multiple allergens in their family or friend circle. 
 
-
-### User Stories
-
-The user stories below are structured so that the various user stories are the numbered bullet points, and the solutions/features required to satisfy these needs are the lettered bullet points.
+## User Stories
 
 1. I heard of this website via word of mouth and want to see what it’s about.
 2. I would like to find a recipe for dinner tonight. I am allergic to some things. 
 3. I am looking for a one stop place to add, edit and view my own recipes.
 4. I want to view recipes and know that I will never see recipes with my allergens in them. Sometimes I might want to see all recipes though, so I can adapt them myself.
 5. I am throwing a dinner party and my friends have an assorted collection of allergies. I want to find a recipe for every course to satisfy all their requirements.
-6. I like to easily share recipes with people. 
-7. As a registered user, I would like to easily be able to favourite recipes and navigate to my favourites easily. 
 
 ### Site owner goals:
 1. I want to create a customer base to target with occasional direct marketing and special offers. (If not necessarily by DM via email, then by showing special offers only to logged in users.
@@ -48,6 +47,9 @@ With time and resources allowing, other goals are to implement:
 - Favourites. - Floating action buttons on the recipe cards and recipe that when clicked add to a FAVOURITES page.
 - Shop Page - A business goal as a way of monetizing the site.
 - Share button - This would be a button on the recipe page that linked to various social media
+The following user story goals would be met by these features:
+1. I like to easily share recipes with people. 
+2. As a registered user, I would like to easily be able to favourite recipes and navigate to my favourites easily. 
 
 ### Design
 
@@ -99,7 +101,7 @@ The four collections contained simple objects. The recipes object holds more dat
 ![Recipe object](/documents/RecipeObject.png)
 
 
-### Features
+## Features
 
 #### Existing Features
 
@@ -189,10 +191,9 @@ The four collections contained simple objects. The recipes object holds more dat
     - Figma was used to create wireframes and aid design and layout decisions.
 
 
-
 ## Testing
 
-see seperate testing.md file
+See seperate [Testing](https://github.com/BonnieMcb/recipease/blob/master/testing.md) file
 
 
 ## Deployment and Cloning Repo
@@ -222,16 +223,32 @@ see seperate testing.md file
 
 ## Credits
 
+#### Code
+
+Stack overflow was invaluable once again. Any code directly copied from there has been attributed by commenting in the code, apart from:
+for add recipe tickboxes
+https://stackoverflow.com/questions/5799090/remove-whitespace-and-make-all-lowercase-in-a-string-for-python
+for Materialize dropdown validation workaround
+jquery code copied from Code Institute lesson Course  Mini Project | Putting It All Together  Adding A Task - Writing to the Database  Materialize Form Validation
+
+#### Content
+
+All code was written by the developer.
+
+#### Media
+
+Images from the Food pack from Flaticon www.flaticon.com
+
+#### Acknowledgements
+
+My Mentor Can Sücüllü for insightful and thoughtful feedback and testing guidance.
+
+My partner Ben for invaluable feedback and endless cups of tea.
+
+The Corona virus for allowing me the oppertunity to work under extremely difficult conditions, locked in a tiny appartment during the Christmas holidays with two wild toddlers.
 
 
 
 
-
-attributions:
-    for add recipe tickboxes
-    https://stackoverflow.com/questions/5799090/remove-whitespace-and-make-all-lowercase-in-a-string-for-python
-
-    for m=Materialize dropdown validation workaround
-    jquery code copied from Code Institute lesson Course  Mini Project | Putting It All Together  Adding A Task - Writing to the Database  Materialize Form Validation
 
 
