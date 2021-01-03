@@ -41,7 +41,7 @@ The Recipease website is a web application where users are able to add and store
 5. I am throwing a dinner party and my friends have an assorted collection of allergies. I want to find a recipe for every course to satisfy all their requirements.
 
 ### Site owner goals:
-1. I want to create a customer base to target with occasional direct marketing and special offers (if not necessarily by DM via email, then by showing special offers only to logged in users.
+1. I want to create a customer base to target with occasional direct marketing and special offers (if not necessarily by DM via email, then by showing special offers only to logged in users).
 2. I want to promote certain cooking tools / recipe books via my website.
 
 #### Stretch Goals
