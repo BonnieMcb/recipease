@@ -13,14 +13,14 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 - [W3C Markup Validator](https://validator.w3.org/) No errors or warnings
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) No errors.
 - [JsHint](https://jshint.com/) (0 warnings)
-- [PEP-8 checker](http://pep8online.com/)(All right)
+- [PEP-8 checker](http://pep8online.com/) (All right)
 
 
 ### Testing User Stories
 
 1. I heard of this website via word of mouth and want to see what it’s about.
     * An enticing home page concisely detailing the aims of this website.
-    * Explicit advertising of the features available to registured users.
+    * Explicit advertising of the features available to registered users.
     
 ![home page](/documents/screenshots/home_page.PNG)
 
@@ -32,7 +32,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 ![filtered recipe](/documents/screenshots/filtered_recipe.PNG)
 ![recipe detail](/documents/screenshots/recipe_page.PNG)
 
-3. I am looking for a one stop place to add, edit and view my own recipes.
+3. I am looking for a one-stop place to add, edit and view my own recipes.
     * Add a recipe (registered user only).
     * Edit/delete recipes that they have added (registered user only).
     * View a list of recipes they have added on the MY RECIPES page (registered user only).
@@ -55,7 +55,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 
 #### Testing site owner goals:
-1. I want to create a customer base to target with occasional direct marketing and special offers. (If not necessarily by DM via email, then by showing special offers only to logged in users.
+1. I want to create a customer base to target with occasional direct marketing and special offers (if not necessarily by DM via email, then by showing special offers only to logged in users).
     * Provide special features to registered users only to encourage registration
     * Maintain a database of registered users. Email address verification etc. was beyond the scope of this project, but if this were a real world application then a valid email address would also be required to register.
 2. I want to promote certain cooking tools / recipe books via my website.
@@ -69,7 +69,7 @@ The majority of testing occured during development. Chrome Development Tools wer
 
 #### Testing the finished website
 
-The site was tested first as a logged out user (desktop and mobile) and then as a logged in user.
+The site was tested first as a logged-out user (desktop and mobile) and then as a logged-in user.
 
 1. Links
 - All links and buttons were tested from and to every page.
@@ -80,18 +80,18 @@ The site was tested first as a logged out user (desktop and mobile) and then as 
 - A large number of test accounts were created with and without allergens.
 - The user input validation was tested, and is correctly working so that the limitations set by me are working (for instance only alphanumeric characters for username).
 - Log in and log out flash messages appear correctly.
-- The correct content for logged in users and guests is shown, including hiding the login/register hyperlinks in the home page content.
+- The correct content for logged-in users and guests is shown, including hiding the login/register hyperlinks in the home page content.
 - Logging in with an incorrect username or password brings up the flash message "INCORRECT USERNAME OR PASSWORD".
 
 3. Filtering allergens
-- This was tested extensively, both logged in and not. As a registered user with allergens and without. Turning safe search on and off. Adding and applying more allergens, and clearing filters.
+- This was tested extensively, both logged-in and not. As a registered user with allergens and without. Turning safe search on and off. Adding and applying more allergens, and clearing filters.
 - The filters were tested in all recipes and within the various categories and are functioning as expected, and without issues.
 
 4. Add recipe
 - Allergen tick boxes that are checked are sent through to MongoDB to create an array and are displayed on the recipe and recipe card.
 - When ingredients and method steps are separated by comma they are displayed as unordered and ordered list items, respectively. 
 - Submit button sends the data to MongoDB, and the Cancel button redirects to the recipes page as expected.
-- Once the recipe has been submitted , it is displayed in the appropriate category, and excluded from the appropriate allergens.  
+- Once the recipe has been submitted, it is displayed in the appropriate category, and excluded from the appropriate allergens.  
 - It was found that no user input limitations or truncate class (from Materialize) had not been set on most of the input fields. This caused an issue on the recipes page where, if the user put in a long string of characters in any of the fields, this would create a long list of characters that shoot off viewport and create a horizontal scroll bar. This is what happens when you forget to apply defensive programming on one of the sections. It was an easy fix, the details of which are described in the Features section in the README.md
 ![](/documents/screenshots/user_input_bug.PNG) ![](/documents/screenshots/fixed_issue.png)
 
