@@ -3,8 +3,8 @@
 - [Validator checks](#validator-checks)
 - [Testing user stories](#testing-user-stories)
 - [Manual testing](#manual-function-testing)  
-- [Additional Testing](#additional-testing)
-- [Known Bugs](#known-bugs)
+- [Additional testing](#additional-testing)
+- [Known bugs](#known-bugs)
   
 ### Validator Checks
 
@@ -45,16 +45,49 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 ![recipes_page](/documents/screenshots/recipes_page.PNG)
 
 
-### Site owner goals:
+#### Testing site owner goals:
 1. I want to create a customer base to target with occasional direct marketing and special offers. (If not necessarily by DM via email, then by showing special offers only to logged in users.
     * Provide special features to registered users only to encourage registration
     * Maintain a database of registered users. Email address verification etc. was beyond the scope of this project, but if this were a real world application then a valid email address would also be required to register.
 2. I want to promote certain cooking tools / recipe books via my website.
     * I did not have time to implement a shop page.
 
+### Manual testing
+
+#### Testing during development
+
+The majority of testing occured during development. Chrome Development Tools were used extensively, both for front-end styling as well as checking what is being POSTed. The CRUD functionality and filtering was tested both on the website and by checking within MongoDB. Within the app.py file, flash messages were frequently used to check logic such as IF statements.
+
+#### Testing the finished website
+
+The site was tested first as a logged out user (desktop and mobile) and then as a logged in user.
+
+1. Links
+- All links and buttons were tested from and to every page.
+- All hover effects were tested.
+- All modals were tested by choosing both options and checking that the user was being redirected to the appropriate place.
+
+2. Account
+- A large number of test accounts were created with and without allergens.
+- The user input validation was tested, and is correctly working so that the limitations set by me are working (for instance only alphanumeric characters for username).
+- Log in and log out flash messages appear correctly.
+- The correct content for logged in users and guests is shown, including hiding the login/register hyperlinks in the home page content.
+- Logging in with an incorrect username or password brings up the flash message "INCORRECT USERNAME OR PASSWORD".
+
+3. Filtering allergens
+- This was tested extensively, both logged in and not. As a registered user with allergens and without. Turning safe search on and off. Adding and applying more allergens, and clearing filters.
+- The filters were tested in all recipes and within the various categories and are functioning as expected, and without issues.
+
+4. Adding recipes
+- It was found that no user input limitations or truncate class (from Materialize) had been set on most of the input fields. This caused an issue on the recipes page where, if the user put in a long string of characters in any of the fields, this would create a long list of letters that shoot off viewport and create a horizontal scroll bar.
+![]() ![]()
+
+5.
 
 
-### Further Testing
+
+
+### Additional testing
 
 -   The website was tested on Google Chrome, Mozilla Firefox and Microsoft Edge browsers.
 -   The website was viewed, using Chrome Developer Tools, on a variety of devices such as Desktop, Laptop, iPhone 11 and a Motorola phone.
