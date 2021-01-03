@@ -2,7 +2,7 @@
 
 - [Validator checks](#validator-checks)
 - [Testing user stories](#testing-user-stories)
-- [Manual testing](#manual-function-testing)  
+- [Manual testing](#manual-testing)  
 - [Additional testing](#additional-testing)
 - [Known bugs](#known-bugs)
   
@@ -78,13 +78,24 @@ The site was tested first as a logged out user (desktop and mobile) and then as 
 - This was tested extensively, both logged in and not. As a registered user with allergens and without. Turning safe search on and off. Adding and applying more allergens, and clearing filters.
 - The filters were tested in all recipes and within the various categories and are functioning as expected, and without issues.
 
-4. Adding recipes
-- It was found that no user input limitations or truncate class (from Materialize) had been set on most of the input fields. This caused an issue on the recipes page where, if the user put in a long string of characters in any of the fields, this would create a long list of letters that shoot off viewport and create a horizontal scroll bar.
-![]() ![]()
+4. Add recipe
+- Allergen tick boxes that are checked are sent through to MongoDB to create an array and are displayed on the recipe and recipe card.
+- When ingredients and method steps are separated by comma they are displayed as unordered and ordered list items, respectively. 
+- Submit button sends the data to MongoDB, and the Cancel button redirects to the recipes page as expected.
+- Once the recipe has been submitted , it is displayed in the appropriate category, and excluded from the appropriate allergens.  
+- It was found that no user input limitations or truncate class (from Materialize) had not been set on most of the input fields. This caused an issue on the recipes page where, if the user put in a long string of characters in any of the fields, this would create a long list of characters that shoot off viewport and create a horizontal scroll bar. This is what happens when you forget to apply defensive programming on one of the sections. It was an easy fix, the details of which are described in the Features section in the README.md
+![](/documents/screenshots/user_input_bug.PNG) ![](/documents/screenshots/fixed_issue.png)
 
-5.
+5. Edit / Delete recipe
+- All of the tests under 'add recipe' are passed.
+- Pressing 'submit' successfully updates the data in MongoDB and the edited recipe is displayed correctly.
+- Clicking 'delete' brings up the confirmation modal. Clicking 'cancel' closes the modal and user remains on My Recipes page. Clicking 'delete' deletes the recipe from the database and the recipe is no longer accessible.
+- Only users who have added the recipe can edit and delete it. During development it was noted that anyone could edit or delete recipes added by others by for example changing the 'show_recipe' part of the url to 'edit_recipe'. This was fixed by adding access permissions in the app.py file.
 
-
+6. View recipe
+- Image, allergens, and all information displaying correctly.
+- It was noticed during testing that the user becomes stuck on the recipe page, with only the navigation bar to navigate for them. This is bad UX, so a BACK button was added that redirects to the page where the user came from.
+![](/documents/screenshots/.png)
 
 
 ### Additional testing
@@ -94,3 +105,5 @@ The site was tested first as a logged out user (desktop and mobile) and then as 
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ### Known Bugs
+
+![](/documents/screenshots/iphone11.jpeg)
