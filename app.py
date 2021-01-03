@@ -281,9 +281,11 @@ def show_recipe(recipes_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     ingredients = recipes.get("ingredients").split(',')
     methods = recipes.get("method").split(',')
+    referrer = request.referrer
+
     return render_template(
         "/show_recipe.html", recipes=recipes, ingredients=ingredients,
-        methods=methods)
+        methods=methods, referrer=referrer)
 
 
 @app.route("/safe_search", methods=["POST"])

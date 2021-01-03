@@ -4,8 +4,9 @@
 {% endblock%}
 
 {% block content %}
-
-
+    <div class="left-align">
+        <a class="waves-effect waves-light btn-small" href="{{ referrer }}">Back</a>
+    </div>
     <div class="section">
         <div class="row flex-container space-between">
             {% if recipes.image %}
@@ -60,5 +61,4 @@
         </div>
     </div>
     <div class="divider"></div>
-
 {% endblock %}
