@@ -93,10 +93,10 @@ There were no specific relationships that need to be maintained between any of t
 
 The documents in the database do relate to each other in some ways however, and a simplified diagram of the schema is visible below. 
 
-![Simplified data schema](/documents/Recipease diagram.jpeg)
+![Simplified data schema](/documents/RecipeaseDiagram.jpeg)
 
 The four collections contained simple objects. The recipes object holds more data than the others, however, including an array for the allergens.
-![Recipe object](/documents/Recipe Object.PNG)
+![Recipe object](/documents/RecipeObject.png)
 
 
 ### Features
