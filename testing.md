@@ -115,5 +115,8 @@ The site was tested first as a logged out user (desktop and mobile) and then as 
 
 ### Known Bugs
 
-- On small screens, the allergen key allignment gets messy. Unfortunately no time to fix it.
+Unfortunately there was no time to fix these issues.
+
+- On small screens, the allergen key allignment gets messy on the Recipes and categories screens. 
+- On some small screens the APPLY FILTER button is pushed down and obscures the allergen filter on the Recipes and categories screens.
 ![](/documents/screenshots/iphone11.jpeg)
