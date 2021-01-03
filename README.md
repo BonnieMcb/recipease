@@ -12,7 +12,7 @@ The brief for this third Milestone project was to build a full-stack site that a
 
 ## Table of Contents
 1. [**Project overview**](#project-overview)
-2. [**UX - User Experience**](#ux-user-experience)
+2. [**UX - User Experience**](#ux---user-experience)
 3. [**User Stories**](#user-stories)
 4. [**Features**](#features)
 5. [**Technology**](#technology)
