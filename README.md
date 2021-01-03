@@ -195,7 +195,7 @@ The four collections contained simple objects. The recipes object holds more dat
 
 ## Testing
 
-See seperate [Testing](https://github.com/BonnieMcb/recipease/blob/master/testing.md) file
+See separate [Testing](https://github.com/BonnieMcb/recipease/blob/master/testing.md) file
 
 
 ## Deployment and Cloning Repo
@@ -227,11 +227,8 @@ See seperate [Testing](https://github.com/BonnieMcb/recipease/blob/master/testin
 
 #### Code
 
-Stack overflow was invaluable once again. Any code directly copied from there has been attributed by commenting in the code, apart from:
-for add recipe tickboxes
-https://stackoverflow.com/questions/5799090/remove-whitespace-and-make-all-lowercase-in-a-string-for-python
-for Materialize dropdown validation workaround
-jquery code copied from Code Institute lesson Course  Mini Project | Putting It All Together  Adding A Task - Writing to the Database  Materialize Form Validation
+Stack overflow was invaluable once again. Any code directly copied from there has been attributed with comments in code.
+Some Script.js jQuery code copied from Code Institute lesson Course  Mini Project | Putting It All Together  Adding A Task - Writing to the Database  Materialize Form Validation
 
 #### Content
 
@@ -247,7 +244,7 @@ My Mentor Can Sücüllü for insightful and thoughtful feedback and testing guid
 
 My partner Ben for invaluable feedback and endless cups of tea.
 
-The Corona virus for allowing me the oppertunity to work under extremely difficult conditions, locked in a tiny appartment during the Christmas holidays with two wild toddlers.
+The Coronavirus for allowing me the oppertunity to work under extremely difficult conditions, locked in a tiny appartment during the Christmas holidays with two wild toddlers.
 
 
 
