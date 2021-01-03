@@ -8,9 +8,11 @@ This website is created for educational purposes only.
     
 The brief for this third Milestone project was to build a full-stack site that allows users to manage a common dataset about a particular domain. It is the third of four projects as part of the Full Stack Web Development Program at The Code Institute. 
 
+[Click here to view the project live via heroku](http://ms3-recipease.herokuapp.com/)
+
 ## Table of Contents
 1. [**Project overview**](#project-overview)
-2. [**UX**](#ux)
+2. [**UX - User Experience**](#ux-user-experience)
 3. [**User Stories**](#user-stories)
 4. [**Features**](#features)
 5. [**Technology**](#technology)
@@ -25,7 +27,7 @@ Recipease was built using [Python](https://www.python.org/), [Flask](https://fla
 
 [Click here to view the project live.](https://ms3-recipease.herokuapp.com/)
 
-## UX (User Experience)
+## UX - User Experience
 
 ### Goals
 The Recipease website is a web application where users are able to add and store their own recipes, as well as view recipes added by others. It is designed with users in mind who have multiple allergens in their family or friend circle. 
